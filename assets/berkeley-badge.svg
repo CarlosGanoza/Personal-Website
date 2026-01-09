@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffd100" />
+      <stop offset="70%" stop-color="#ecc72a" />
+      <stop offset="100%" stop-color="#c28c12" />
+    </linearGradient>
+  </defs>
+  <circle cx="70" cy="70" r="68" fill="url(#grad)" stroke="#0a1a40" stroke-width="4" />
+  <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="32" fill="#031133">
+    Cal
+  </text>
+  <text x="50%" y="72%" text-anchor="middle" font-family="Inter, sans-serif" font-weight="500" font-size="10" letter-spacing="0.35em" fill="#031133">
+    FIAT LUX
+  </text>
+</svg>
