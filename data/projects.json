@@ -1,0 +1,75 @@
+{
+  "projects": [
+    {
+      "title": "OpenApply",
+      "tagline": "Scholarship help for every applicant.",
+      "problem": "Applicants needed deadlines, guides, and support in one place.",
+      "built": "Built a scholarship workspace with tools, training, and applicant guidance.",
+      "result": "Delivered a clearer starting point for scholarship workflows.",
+      "status": "real",
+      "thumbnail": "assets/projects/openapply.png",
+      "stack": ["Next.js", "React", "TypeScript", "Prisma", "OpenAI", "Analytics Dashboards"],
+      "links": {
+        "github": "https://github.com/CarlosGanoza"
+      },
+      "featured": true
+    },
+    {
+      "title": "SignalSponsor",
+      "tagline": "Evidence-backed sponsorship decisions.",
+      "problem": "Teams needed a clearer way to turn scattered files into a sponsorship case.",
+      "built": "Built document intake, signal extraction, and explainable recommendation flows.",
+      "result": "Made sponsorship reviews easier to inspect and defend.",
+      "status": "real",
+      "thumbnail": "assets/projects/signalsponsor.png",
+      "stack": ["Next.js", "TypeScript", "Prisma", "SQLite", "Zod", "Document Ingestion"],
+      "links": {
+        "github": "https://github.com/CarlosGanoza"
+      },
+      "featured": true
+    },
+    {
+      "title": "Dependency Migration Planner",
+      "tagline": "Detect risky dependencies and map a realistic migration path.",
+      "problem": "Teams needed early risk detection before abandoned packages broke production work.",
+      "built": "Built repo scanning, dependency risk scoring, and staged migration planning.",
+      "result": "Produced practical migration guidance for JS/TS repositories.",
+      "status": "real",
+      "thumbnail": "assets/projects/dependency-planner.png",
+      "stack": ["TypeScript", "Codemods", "CLI Testing", "UI Testing", "End-to-End Testing"],
+      "links": {
+        "github": "https://github.com/CarlosGanoza"
+      },
+      "featured": true
+    },
+    {
+      "title": "Legacy Systems Analysis Pipeline",
+      "tagline": "Local architecture reports for large codebases.",
+      "problem": "Large systems needed readable architecture and traceability outputs without moving code off machine.",
+      "built": "Built a local Python/SQL pipeline for reports, diagrams, and architecture maps.",
+      "result": "Generated architecture views for 100K+ LOC workflows.",
+      "metrics_note": "BART - Feb 2026 to Present",
+      "status": "real",
+      "thumbnail": "assets/projects/code-analyzer.png",
+      "stack": ["Python", "SQL", "LikeC4", "Mermaid", "Graphviz", "Linux/Git"],
+      "links": {
+        "github": "https://github.com/CarlosGanoza"
+      },
+      "featured": false
+    },
+    {
+      "title": "Client Websites & Reporting Workflows",
+      "tagline": "Freelance web delivery for small businesses and personal brands.",
+      "problem": "Clients needed maintainable websites plus lightweight dashboards and reporting systems.",
+      "built": "Built and deployed 8+ websites with dashboards, reporting workflows, scripting, Git-based iterations, and client-facing features.",
+      "result": "Delivered production-ready websites and cleaner client operations across multiple engagements.",
+      "status": "real",
+      "thumbnail": "assets/projects/client-websites.svg",
+      "stack": ["JavaScript", "Git", "Excel", "Google Sheets", "Scripting"],
+      "links": {
+        "github": "https://github.com/CarlosGanoza"
+      },
+      "featured": false
+    }
+  ]
+}

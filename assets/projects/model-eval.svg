@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#2a3f63"/>
+      <stop offset="100%" stop-color="#0a1320"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" fill="url(#g)"/>
+  <rect x="100" y="88" width="440" height="188" rx="14" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.2)"/>
+  <rect x="136" y="126" width="84" height="110" rx="8" fill="rgba(255,209,102,0.45)"/>
+  <rect x="236" y="146" width="84" height="90" rx="8" fill="rgba(255,255,255,0.33)"/>
+  <rect x="336" y="110" width="84" height="126" rx="8" fill="rgba(255,255,255,0.45)"/>
+  <rect x="436" y="162" width="68" height="74" rx="8" fill="rgba(255,255,255,0.22)"/>
+  <text x="50%" y="312" text-anchor="middle" fill="#f1f4f9" font-family="Inter, Arial, sans-serif" font-size="24">Model Evaluation Toolkit</text>
+</svg>

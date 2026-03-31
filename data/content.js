@@ -1,63 +1,47 @@
 export const projects = [
   {
-    title: "Sentiment-Oriented Study Tracker",
-    tag: "Research · Product",
+    title: "OpenApply",
+    tag: "AI Platform",
     description:
-      "Real-time dashboard using D3.js + Flask to track student momentum, stress signals, and productivity—instrumented with Postgres + CI.",
-    categories: ["Research", "Product"],
-    demo: "https://example.com/sentiment-tracker",
-    repo: "https://github.com/example/sentiment-tracker",
-    status: "Prototype"
+      "Built an AI platform with authenticated APIs, analytics dashboards, schema validation, and persistent workflow state.",
+    categories: ["Next.js", "TypeScript", "Prisma"],
+    demo: "",
+    repo: "https://github.com/CarlosGanoza",
+    status: "Project"
   },
   {
-    title: "Berkeley Open Data Pipeline",
-    tag: "Web · Sustainability",
+    title: "SignalSponsor",
+    tag: "Decision Platform",
     description:
-      "Led ingestion, cleaning, and React visualization for campus sustainability telemetry with accessible theming and documentation.",
-    categories: ["Web", "Sustainability"],
-    demo: "https://example.com/berkeley-data",
-    repo: "https://github.com/example/berkeley-data",
-    status: "In review"
+      "Built document ingestion, structured signal extraction, explainable recommendation memos, and audit-friendly review flows.",
+    categories: ["Next.js", "SQLite", "Zod"],
+    demo: "",
+    repo: "https://github.com/CarlosGanoza",
+    status: "Project"
   },
   {
-    title: "AI Research Companion",
-    tag: "AI · Productivity",
+    title: "Dependency Migration Planner",
+    tag: "Migration Tooling",
     description:
-      "LangChain + OpenAI prototype that summarizes lab notes, tracks hypotheses, and logs learnings inside Notion and Linear.",
-    categories: ["AI", "Productivity"],
-    demo: "https://example.com/ai-companion",
-    repo: "https://github.com/example/ai-companion",
-    status: "Live"
-  },
-  {
-    title: "Education Impact Portal",
-    tag: "UX · Data Science",
-    description:
-      "Co-designed an impact board for Peruvian mentorship programs with TypeScript + Tailwind and responsive analytics.",
-    categories: ["UX", "Data Science"],
-    demo: "https://example.com/impact-portal",
-    repo: "https://github.com/example/impact-portal",
-    status: "Documented"
+      "Built an AI-assisted migration planner with dependency risk scoring, rollback workflows, and 120+ end-to-end tests.",
+    categories: ["TypeScript", "Codemods", "Testing"],
+    demo: "",
+    repo: "https://github.com/CarlosGanoza",
+    status: "Project"
   }
 ];
 
 export const voices = [
   {
-    person: "Dr. Lena Moreno",
-    role: "Research Advisor · UC Berkeley",
+    person: "Community Leadership & Education",
+    role: "Mar 2013 - Present",
     quote:
-      "Carlos blends rigorous analysis with a calm presence. Their dashboards make decision-making effortless and inclusive."
+      "Led civic and education initiatives across Peru and remote communities while managing 29+ students and 15+ volunteers."
   },
   {
-    person: "Mateo Cruz",
-    role: "Peruvian Scholars and CS Lead",
+    person: "Public Outreach",
+    role: "Talks, mentoring, education",
     quote:
-      "Carlos drove a mentorship platform with clarity—bringing Rust services, Tailwind UI, and Spanish-first documentation."
-  },
-  {
-    person: "Priya Shah",
-    role: "Product Manager · Education Technology",
-    quote:
-      "Carlos ships prototypes that feel like polished letters: thoughtful research, clean APIs, and delightful UI."
+      "Taught 350+ students and delivered public talks and livestreams reaching 60K+ views."
   }
 ];

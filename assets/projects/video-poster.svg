@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="t d">
+  <title id="t">Demo video poster</title>
+  <desc id="d">Placeholder poster for project demo video.</desc>
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#1a2f4f"/>
+      <stop offset="100%" stop-color="#091120"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#g)"/>
+  <circle cx="640" cy="360" r="74" fill="rgba(255,255,255,0.15)"/>
+  <polygon points="615,325 615,395 680,360" fill="#ffd166"/>
+  <text x="50%" y="470" dominant-baseline="middle" text-anchor="middle" fill="#f2f5fb" font-family="Inter, Arial, sans-serif" font-size="34">Demo Video</text>
+</svg>

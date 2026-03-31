@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#253956"/>
+      <stop offset="100%" stop-color="#0c1422"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" fill="url(#g)"/>
+  <rect x="98" y="96" width="444" height="170" rx="14" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.2)"/>
+  <line x1="132" y1="138" x2="510" y2="138" stroke="rgba(255,255,255,0.3)" stroke-width="8" stroke-linecap="round"/>
+  <line x1="132" y1="176" x2="430" y2="176" stroke="rgba(255,255,255,0.3)" stroke-width="8" stroke-linecap="round"/>
+  <line x1="132" y1="214" x2="378" y2="214" stroke="#ffd166" stroke-width="8" stroke-linecap="round"/>
+  <text x="50%" y="312" text-anchor="middle" fill="#f1f4f9" font-family="Inter, Arial, sans-serif" font-size="24">Experiment Readout</text>
+</svg>
