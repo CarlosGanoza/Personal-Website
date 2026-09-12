@@ -24,49 +24,118 @@
     content="UC Berkeley student portfolio focused on AI systems, Python/SQL pipelines, and technical documentation."
   />
   <meta name="twitter:image" content="https://carlosganoza.github.io/Personal-Website/assets/og-card.png" />
+  <meta name="theme-color" content="#f4f2ee" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="apple-touch-icon" href="assets/og-card.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Skip to content</a>
+  <a class="skip-link" href="#home">Skip to portfolio content</a>
 
-  <header class="site-header" aria-label="Main navigation">
-    <div class="site-header__inner">
-      <a class="brand" href="#home" aria-label="Go to homepage section">carlos.atalluz()</a>
-      <nav class="site-nav" aria-label="Section navigation">
+  <header class="masthead" aria-label="Main navigation">
+    <div class="masthead__inner">
+      <a class="wordmark" href="#cinematic-hero" aria-label="Go to top of page">
+        Carlos Atalluz<span class="wordmark__mark" aria-hidden="true">()</span>
+      </a>
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-navigation"
+        aria-label="Open navigation"
+      >
+        <span></span><span></span>
+      </button>
+      <nav id="site-navigation" class="nav" aria-label="Section navigation">
+        <a href="#home">About</a>
         <a href="#skills">Skills</a>
+        <a href="#featured-projects">Work</a>
         <a href="#experience">Experience</a>
-        <a href="#featured-projects">Projects</a>
-        <a href="#leadership-impact">Leadership</a>
-        <a href="#education">Education</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
   <main id="main-content">
-    <section id="home" class="hero reveal" aria-labelledby="hero-heading">
-      <div class="hero__content">
-        <p class="eyebrow">UC Berkeley CDSS | Data Science | Expected May 2028</p>
-        <h1 id="hero-heading">Carlos Atalluz</h1>
-        <p class="hero__summary">
-          I build local-first AI systems, Python/SQL pipelines, and technical documentation for real-world workflows.
-        </p>
-        <div class="hero__actions" aria-label="Primary links">
-          <a class="btn btn--primary" href="assets/Carlos_Resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open resume PDF in a new tab">Resume (PDF)</a>
-          <a class="btn btn--primary" href="https://github.com/CarlosGanoza" target="_blank" rel="noopener noreferrer" aria-label="Open GitHub profile in a new tab">GitHub</a>
-          <a class="btn btn--primary" href="https://www.linkedin.com/in/carlos-ganoza-atl/" target="_blank" rel="noopener noreferrer" aria-label="Open LinkedIn profile in a new tab">LinkedIn</a>
-        </div>
+    <section id="cinematic-hero" class="hero-video-section" aria-label="Cinematic video introduction">
+      <div class="hero-video__wrapper">
+        <video
+          id="hero-video-element"
+          class="hero-video__media"
+          src="assets/hero-video.mp4"
+          poster="assets/hero-poster.jpg"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          aria-hidden="true"
+        ></video>
+        <div class="hero-video__overlay" aria-hidden="true"></div>
       </div>
-      <aside class="hero__visual" aria-label="Profile photo">
-        <div class="hero__photo-frame">
+
+      <div class="hero-video__controls">
+        <button
+          id="hero-video-toggle"
+          class="hero-video__btn"
+          type="button"
+          aria-label="Pause background video"
+          data-state="playing"
+        >
+          <svg class="hero-video__icon hero-video__icon--pause" viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true">
+            <rect x="6" y="4" width="4" height="16" rx="1"></rect>
+            <rect x="14" y="4" width="4" height="16" rx="1"></rect>
+          </svg>
+          <svg class="hero-video__icon hero-video__icon--play" viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true" hidden>
+            <polygon points="6,4 20,12 6,20"></polygon>
+          </svg>
+          <span class="hero-video__btn-text">Pause</span>
+        </button>
+      </div>
+
+      <a href="#home" class="hero-video__scroll-hint" aria-label="Scroll down to portfolio content">
+        <span class="hero-video__scroll-label">Explore Portfolio</span>
+        <span class="hero-video__scroll-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="7 10 12 15 17 10"></polyline>
+          </svg>
+        </span>
+      </a>
+    </section>
+
+    <section id="home" class="hero" aria-labelledby="hero-heading">
+      <img class="hero__flag" src="assets/peru-flag.png" alt="Peruvian flag" width="1254" height="1254" />
+      <div class="hero__inner">
+        <div class="hero__text reveal">
+          <p class="label hero__eyebrow">
+            UC Berkeley <span aria-hidden="true">/</span> Computer Science
+            <span aria-hidden="true">/</span> Expected May 2028
+          </p>
+          <h1 id="hero-heading">Carlos<br /><span>Atalluz</span></h1>
+          <p class="hero__lede">
+            I build full-stack product platforms, machine learning &amp; AI systems, and robust data pipelines
+            for real-world workflows.
+          </p>
+          <p class="hero__links" aria-label="Primary links">
+            <a href="assets/carlos_resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open resume PDF in a new tab">Resume<span class="arrow" aria-hidden="true">↗</span></a>
+            <a href="https://github.com/CarlosGanoza" target="_blank" rel="noopener noreferrer" aria-label="Open GitHub profile in a new tab">GitHub<span class="arrow" aria-hidden="true">↗</span></a>
+            <a href="https://www.linkedin.com/in/carlos-ganoza-atl/" target="_blank" rel="noopener noreferrer" aria-label="Open LinkedIn profile in a new tab">LinkedIn<span class="arrow" aria-hidden="true">↗</span></a>
+          </p>
+          <div id="skills" class="hero__stack" aria-label="Technical skills">
+            <p class="label">Core stack</p>
+            <p>Python <span>·</span> Java <span>·</span> TypeScript <span>·</span> SQL <span>·</span> Next.js <span>·</span> React <span>·</span> OpenAI API <span>·</span> Ollama/Qwen</p>
+            <p class="label">Tooling</p>
+            <p>Prisma <span>·</span> Git/GitHub <span>·</span> Linux <span>·</span> E2E testing <span>·</span> Graphviz <span>·</span> Mermaid <span>·</span> LikeC4</p>
+          </div>
+        </div>
+
+        <figure class="portrait reveal">
           <img
             src="assets/profile-formal.png"
             alt="Portrait of Carlos Atalluz"
@@ -75,189 +144,294 @@
             fetchpriority="high"
             decoding="async"
           />
-        </div>
-        <p class="hero__photo-note">Python • Data pipelines • AI systems • Linux/Git</p>
-      </aside>
+          <figcaption class="label">
+            Berkeley, CA <span aria-hidden="true">—</span> Software engineering, AI systems,
+            Python, TypeScript, Linux/Git
+          </figcaption>
+        </figure>
+      </div>
     </section>
 
-    <section id="skills" class="skills section-open reveal" aria-labelledby="skills-heading">
-      <div class="section-layout section-layout--split">
-        <div class="section-heading section-heading--sticky">
-          <p class="eyebrow">Skills</p>
-          <h2 id="skills-heading">Technical Skills</h2>
-          <p class="section-lede">Core tools for data work, AI systems, and reliable technical delivery.</p>
-        </div>
-        <div class="skills__grid">
-          <article class="skills__group" aria-label="Data and machine learning skills">
-            <h3>Programming</h3>
-            <ul class="pill-list">
-              <li>Python</li>
-              <li>SQL</li>
-              <li>Pandas</li>
-              <li>NumPy</li>
-              <li>Excel</li>
-              <li>Google Sheets</li>
-            </ul>
-          </article>
-          <article class="skills__group" aria-label="Engineering skills">
-            <h3>Data / AI</h3>
-            <ul class="pill-list">
-              <li>Jupyter Notebook</li>
-              <li>Data cleaning</li>
-              <li>Data wrangling</li>
-              <li>Analytics dashboards</li>
-              <li>OpenAI API</li>
-              <li>Structured outputs</li>
-              <li>Document ingestion</li>
-            </ul>
-          </article>
-          <article class="skills__group" aria-label="Analytics skills">
-            <h3>Systems</h3>
-            <ul class="pill-list">
-              <li>Linux</li>
-              <li>Git</li>
-              <li>GitHub</li>
-              <li>REST APIs</li>
-              <li>Schema validation</li>
-              <li>End-to-end testing</li>
-              <li>JavaScript/TypeScript</li>
-              <li>Next.js/React</li>
-              <li>Prisma</li>
-              <li>SQLite</li>
-            </ul>
-          </article>
-          <article class="skills__group" aria-label="Languages">
-            <h3>Languages</h3>
-            <ul class="pill-list">
-              <li>English</li>
-              <li>Spanish</li>
-            </ul>
-          </article>
+    <section id="experience" class="section experience" aria-labelledby="experience-heading">
+      <div class="section__inner reveal">
+        <div class="experience-story">
+          <div class="experience-story__heading">
+            <p class="label">My journey</p>
+            <h2 id="experience-heading">Building systems<br /><span>that make access real.</span></h2>
+          </div>
+          <div class="experience-story__copy">
+            <p>
+              I’m a <strong>Computer Science student at UC Berkeley</strong> building dependable software and AI-enabled tools for real-world use. I enjoy turning ambiguous problems into clear, maintainable systems across full-stack product development, data workflows, and applied research.
+            </p>
+            <p>
+              At <strong>Bay Area Rapid Transit (BART)</strong>, I developed local-first Python and SQL tooling that turns large legacy codebases into actionable architecture reports. That work sharpened my approach to developer tooling, data modeling, and practical systems design.
+            </p>
+            <p>
+              At the <strong>UC Berkeley School of Education’s BEAR Center</strong>, I contribute to research in AI, educational assessment, and psychometrics. I also support education-access initiatives including <strong>Project Access</strong>, <strong>Beca Cometa</strong>, <strong>PeruEduca</strong>, and <strong>Tilting Futures</strong>—experiences that shape how I build: technically rigorous, user-centered, and designed for lasting impact.
+            </p>
+            <a class="experience-story__resume" href="assets/carlos_resume.pdf" target="_blank" rel="noopener noreferrer">Read my resume <span class="arrow" aria-hidden="true">↗</span></a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="featured-projects" class="projects section-open section-open--projects reveal" aria-labelledby="featured-projects-heading">
-      <div class="section-heading section-heading--wide">
-        <p class="eyebrow">Featured Projects</p>
-        <h2 id="featured-projects-heading">Technical Projects</h2>
-        <p class="section-lede">Selected work in AI platforms, document pipelines, and migration tooling.</p>
-      </div>
-      <div id="featured-projects-grid" class="project-grid project-grid--featured" aria-live="polite"></div>
-      <noscript>
-        <p class="projects__empty">Enable JavaScript to load project cards from <code>data/projects.json</code>.</p>
-      </noscript>
-    </section>
-
-    <section id="additional-projects" class="projects section-open section-open--subtle reveal" aria-labelledby="additional-projects-heading">
-      <div class="section-heading">
-        <p class="eyebrow">Additional Projects</p>
-        <h2 id="additional-projects-heading">Additional Build Work</h2>
-        <p class="section-lede">Applied work from enterprise systems analysis and client delivery.</p>
-      </div>
-      <div id="additional-projects-grid" class="project-grid project-grid--compact" aria-live="polite"></div>
-    </section>
-
-    <section id="leadership-impact" class="impact section-open reveal" aria-labelledby="impact-heading">
-      <div class="section-layout section-layout--impact">
-        <div class="section-heading">
-          <p class="eyebrow">Leadership</p>
-          <h2 id="impact-heading">Community Leadership &amp; Education</h2>
+    <section id="featured-projects" class="section work" aria-labelledby="featured-projects-heading">
+      <div class="section__inner reveal">
+        <div class="section-head">
+          <div class="section-head__title">
+            <p class="label">Selected work</p>
+            <h2 id="featured-projects-heading">From ideas to<br /><span>real tools.</span></h2>
+          </div>
         </div>
-        <div class="impact__body">
-          <ul class="impact-list">
-            <li>Led civic and education initiatives across Peru and remote communities since 2013.</li>
-            <li>Managed teams of <strong>29+ students</strong> and <strong>15+ volunteers</strong>.</li>
-            <li>Taught and mentored <strong>350+ students</strong>.</li>
-            <li>Delivered public talks and livestreams reaching <strong>60K+ views</strong>.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="experience" class="experience section-surface reveal" aria-labelledby="awards-heading">
-      <div class="section-heading section-heading--wide">
-        <p class="eyebrow">Experience</p>
-        <h2 id="awards-heading">Professional Experience</h2>
-      </div>
-      <div class="awards-list" aria-label="Professional experience list">
-        <article>
-          <h3>AI/SWE Mentee - Legacy Systems Analysis</h3>
-          <p>Bay Area Rapid Transit (BART) | Feb 2026 – Present | Remote</p>
-          <p>Built a secure local-first Python/SQL pipeline to analyze 100K+ LOC of enterprise legacy systems and generate structured technical documentation.</p>
-        </article>
-        <article>
-          <h3>Web Developer / Designer (Freelance)</h3>
-          <p>Jan 2020 – Jan 2025 (Lima, Peru / Remote)</p>
-          <p>Built and deployed 8+ websites for small businesses and personal brands, including dashboards, reporting workflows, and client-facing features.</p>
-        </article>
-      </div>
-      <div class="awards-more">
-        <button
-          id="awards-more-toggle"
-          class="awards-more__toggle"
-          type="button"
-          aria-expanded="false"
-          aria-controls="awards-more-panel"
-          data-collapsed-label="Show more experience details"
-          data-expanded-label="Show fewer experience details"
-        >
-          Show more experience details
+        <div id="featured-projects-grid" class="cases" aria-live="polite"></div>
+        <button id="featured-projects-toggle" class="projects-disclosure" type="button" aria-controls="featured-project-showcase" aria-expanded="false" hidden>
+          <span class="projects-disclosure__text">See more</span><span class="projects-disclosure__chevron" aria-hidden="true">⌄</span>
         </button>
-        <div id="awards-more-panel" class="awards-more__panel" hidden>
-        <ul>
-          <li>Standardized large code and system artifacts into reusable LikeC4, Mermaid, and Graphviz outputs.</li>
-          <li>Implemented privacy-preserving workflows, governance checks, and multi-provider integration paths in a Linux/Git environment.</li>
-          <li>Automated client tracking and analysis with Excel, Google Sheets, scripting, Git, and iterative deployments.</li>
-          <li>Cleaned and structured business data to turn client requirements into production-ready features.</li>
-        </ul>
+        <noscript>
+          <p class="cases__empty">Enable JavaScript to load project details from <code>data/projects.json</code>.</p>
+        </noscript>
+      </div>
+    </section>
+
+    <section id="certificates" class="certificates" aria-labelledby="certificates-heading">
+      <div class="certificates__gallery reveal">
+        <div class="certificates__copy">
+          <p class="label">Credentials</p>
+          <p>Selected certificates and continued learning that reflect the skills, curiosity, and care I bring to every project.</p>
+        </div>
+        <div class="certificates__title">
+          <h2 id="certificates-heading">Always learning.<br><span>Always building.</span></h2>
         </div>
       </div>
     </section>
 
-    <div class="section-row">
-      <section id="education" class="education section-open section-open--education reveal" aria-labelledby="education-heading">
-        <p class="eyebrow">Education</p>
-        <h2 id="education-heading">University of California, Berkeley</h2>
-        <p class="education__primary">B.A. Data Science (Intended), College of Computing, Data Science &amp; Society | Expected May 2028</p>
-        <p class="education__coursework">Relevant coursework: Data C8 (Inference, Regression, Classification), CS 61A (IP), Math 54, Math 53 (IP)</p>
-      </section>
+    <section id="additional-projects" class="section work work--additional" aria-labelledby="additional-projects-heading">
+      <div class="section__inner reveal">
+        <div class="section-head">
+          <div class="section-head__title">
+            <p class="label">Additional work</p>
+            <h2 id="additional-projects-heading">Also <span>built</span></h2>
+          </div>
+          <p class="section-lede">
+            Migration tooling and client delivery, presented as supporting work.
+          </p>
+        </div>
+        <div id="additional-projects-grid" class="cases cases--brief" aria-live="polite"></div>
+      </div>
+    </section>
 
-      <section id="contact" class="contact section-surface section-surface--contact reveal" aria-labelledby="contact-heading">
-        <p class="eyebrow">Contact</p>
-        <h2 id="contact-heading">Get in Touch</h2>
-        <p class="section-lede">Reach out for internships, projects, or collaboration.</p>
-        <div class="contact__grid">
-          <article>
-            <h3>Email</h3>
-            <a href="mailto:carlos.ganoza@berkeley.edu">carlos.ganoza@berkeley.edu</a>
+    <section id="research" class="section research" aria-labelledby="research-heading">
+      <div class="section__inner reveal">
+        <div class="research__head">
+          <div>
+            <p class="label">Academic exploration</p>
+            <h2 id="research-heading">Exploring math,<br /><span>physics &amp; AI</span></h2>
+          </div>
+        </div>
+        <div class="research__grid">
+          <article class="research-card research-card--ai">
+            <p class="label">AI research <span aria-hidden="true">/</span> Current</p>
+            <figure class="research-card__media">
+              <img src="assets/research/jupyter-lecture.jpg" alt="UC Berkeley students learning with Jupyter notebooks in a lecture hall" />
+            </figure>
+            <h3>AI for educational<br />assessment systems</h3>
+            <p>Contributing to research on AI, educational assessment, and psychometrics at UC Berkeley’s BEAR Center.</p>
+            <a href="https://www.linkedin.com/in/carlos-ganoza-atl/" target="_blank" rel="noopener noreferrer">View profile<span class="arrow" aria-hidden="true">↗</span></a>
           </article>
-          <article>
-            <h3>Location</h3>
-            <p>Berkeley, CA</p>
+          <article class="research-card research-card--math">
+            <p class="label">Mathematics <span aria-hidden="true">/</span> 2025</p>
+            <figure class="research-card__media">
+              <img src="assets/research/evans-hall.jpg" alt="Evans Hall at UC Berkeley, home to the mathematics department" />
+            </figure>
+            <h3>Modeling 3D volumes<br />with Lagrange multipliers</h3>
+            <p>Modeled a bottle-like 3D shape with Lagrange multipliers and integral calculus, then checked the result numerically.</p>
+            <a href="https://www.linkedin.com/in/carlos-ganoza-atl/" target="_blank" rel="noopener noreferrer">View publication<span class="arrow" aria-hidden="true">↗</span></a>
           </article>
-          <article>
-            <h3>LinkedIn</h3>
-            <a href="https://www.linkedin.com/in/carlos-ganoza-atl/" target="_blank" rel="noopener noreferrer">linkedin.com/in/carlos-ganoza-atl</a>
-          </article>
-          <article>
-            <h3>GitHub</h3>
-            <a href="https://github.com/CarlosGanoza" target="_blank" rel="noopener noreferrer">github.com/CarlosGanoza</a>
+          <article class="research-card research-card--physics">
+            <p class="label">Physics <span aria-hidden="true">/</span> 2023</p>
+            <figure class="research-card__media">
+              <img src="assets/research/leconte-physics.jpg" alt="LeConte Hall, UC Berkeley's physics building" />
+            </figure>
+            <h3>Gas volume &amp; mass<br />at ambient conditions</h3>
+            <p>Investigated gas-volume and mass relationships through theoretical modeling and calculations based on the ideal-gas model.</p>
+            <a href="https://www.linkedin.com/in/carlos-ganoza-atl/" target="_blank" rel="noopener noreferrer">View publication<span class="arrow" aria-hidden="true">↗</span></a>
           </article>
         </div>
-        <div class="contact__actions">
-          <a class="btn btn--primary" href="mailto:carlos.ganoza@berkeley.edu">Email Carlos</a>
-          <a class="btn btn--secondary" href="assets/Carlos_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume (PDF)</a>
-        </div>
-      </section>
-    </div>
+      </div>
+    </section>
 
-    <footer class="site-footer">
-      <p>Built with vanilla HTML/CSS/JS for GitHub Pages.</p>
-    </footer>
+    <section class="section collaboration-callout" aria-labelledby="collaboration-heading">
+      <div class="section__inner reveal">
+        <div class="collaboration-callout__content">
+          <div>
+            <p class="label">Collaboration</p>
+            <h2 id="collaboration-heading">Want to build <span>something incredible?</span></h2>
+          </div>
+          <div class="collaboration-callout__aside">
+            <p>I’m open to thoughtful collaborations, research, and ambitious products with real-world impact.</p>
+            <a href="mailto:carlos.ganoza@berkeley.edu">Start a conversation <span class="arrow" aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section organizations" aria-labelledby="organizations-heading">
+      <div class="section__inner reveal">
+        <div class="organizations__head">
+          <p class="label" id="organizations-heading">Worked on</p>
+        </div>
+        <div class="organizations__marquee" aria-label="Organizations represented in the portfolio">
+          <div class="organizations__track">
+            <ol class="organizations__list">
+              <li class="organization-item organization-item--berkeley">
+                <a href="https://www.berkeley.edu/" target="_blank" rel="noopener noreferrer" aria-label="University of California, Berkeley">
+                  <img class="organization-item__logo organization-item__logo--light-source" src="https://brand.berkeley.edu/wp-content/themes/gallantry/dist/imgs/logo-uc-berkeley.svg" alt="UC Berkeley logo" />
+                  <span class="organization-item__name">UC Berkeley</span>
+                  <span class="organization-item__detail">BEAR Center</span>
+                </a>
+              </li>
+              <li class="organization-item">
+                <a href="https://www.bart.gov/" target="_blank" rel="noopener noreferrer" aria-label="Bay Area Rapid Transit">
+                  <img class="organization-item__logo organization-item__logo--bart" src="https://www.bart.gov/themes/custom/bart/logo.svg" alt="BART logo" />
+                  <span class="organization-item__name">Bay Area Rapid Transit</span>
+                  <span class="organization-item__detail">AI &amp; software research</span>
+                </a>
+              </li>
+              <li class="organization-item">
+                <a href="https://projectaccess.org/" target="_blank" rel="noopener noreferrer" aria-label="Project Access">
+                  <img class="organization-item__logo organization-item__logo--light-source" src="https://projectaccess.org/wp-content/uploads/2025/05/Frame-5.svg" alt="Project Access logo" />
+                  <span class="organization-item__name">Project Access</span>
+                  <span class="organization-item__detail">Education access</span>
+                </a>
+              </li>
+              <li class="organization-item">
+                <a href="https://www.becacometa.com/" target="_blank" rel="noopener noreferrer" aria-label="Beca Cometa">
+                  <img class="organization-item__logo organization-item__logo--light-source" src="https://cdn.prod.website-files.com/69e9886677c236bd2e0f503b/69e9886677c236bd2e0f50d0_logo_beca-cometa_about.svg" alt="Beca Cometa logo" />
+                  <span class="organization-item__name">Beca Cometa</span>
+                  <span class="organization-item__detail">Intercorp initiative</span>
+                </a>
+              </li>
+              <li class="organization-item">
+                <a href="https://www.perueduca.pe/" target="_blank" rel="noopener noreferrer" aria-label="PeruEduca">
+                  <img class="organization-item__logo organization-item__logo--perueduca" src="https://3.bp.blogspot.com/-v5UvA49JEbw/U8VgHLEns1I/AAAAAAAACZA/Rl6_43dFAQ8/s1600/PERUEDUCA.png" alt="PeruEduca logo" />
+                  <span class="organization-item__name">PeruEduca</span>
+                  <span class="organization-item__detail">Public education</span>
+                </a>
+              </li>
+              <li class="organization-item">
+                <a href="https://tiltingfutures.org/" target="_blank" rel="noopener noreferrer" aria-label="Tilting Futures">
+                  <img class="organization-item__logo" src="https://d11jve6usk2wa9.cloudfront.net/platform/31808/assets/logo.png" alt="Tilting Futures logo" />
+                  <span class="organization-item__name">Tilting Futures</span>
+                  <span class="organization-item__detail">Community initiative</span>
+                </a>
+              </li>
+              <li class="organization-item">
+                <a href="https://ozcf.co.za/" target="_blank" rel="noopener noreferrer" aria-label="Oranjezicht City Farm">
+                  <img class="organization-item__logo" src="https://ozcf.co.za/wp-content/uploads/2024/07/logo-proper-blue-1.png" alt="Oranjezicht City Farm logo" />
+                  <span class="organization-item__name">Oranjezicht City Farm</span>
+                  <span class="organization-item__detail">Environmental education</span>
+                </a>
+              </li>
+              <li class="organization-item">
+                <a href="https://worldliteracyfoundation.org/" target="_blank" rel="noopener noreferrer" aria-label="World Literacy Foundation">
+                  <img class="organization-item__logo organization-item__logo--world-literacy" src="https://worldliteracyfoundation.org/wp-content/uploads/2026/01/cropped-WLF-LOGO-300x300-CUTED.png" alt="World Literacy Foundation logo" />
+                  <span class="organization-item__name">World Literacy Foundation</span>
+                  <span class="organization-item__detail">Education outreach</span>
+                </a>
+              </li>
+              <li class="organization-item">
+                <a href="https://hundred.org/en/" target="_blank" rel="noopener noreferrer" aria-label="HundrED">
+                  <img class="organization-item__logo organization-item__logo--hundred" src="https://www.biokind.org/assets/press/hundred.png" alt="HundrED logo" />
+                  <span class="organization-item__name">HundrED</span>
+                  <span class="organization-item__detail">Education innovation</span>
+                </a>
+              </li>
+              <li class="organization-item">
+                <a href="https://www.ivoox.com/perfil-incognity-academy_a8_podcaster_26143150_1.html" target="_blank" rel="noopener noreferrer" aria-label="Incognity Academy">
+                  <img class="organization-item__logo organization-item__logo--incognity" src="https://lh3.googleusercontent.com/a-/AOh14GhjZPAd1S5k8Kpt2RgfvZKn2qYqBgoSYmwcYoyF=s2048-c" alt="Incognity Academy logo" />
+                  <span class="organization-item__name">Incognity Academy</span>
+                  <span class="organization-item__detail">Education evaluation</span>
+                </a>
+              </li>
+              <li class="organization-item">
+                <a href="#featured-projects" aria-label="DinoApply — independent product">
+                  <span class="organization-item__logo organization-item__logo--dino-wordmark" role="img" aria-label="DinoApply logo">DinoApply</span>
+                  <span class="organization-item__name">DinoApply</span>
+                  <span class="organization-item__detail">Independent product</span>
+                </a>
+              </li>
+            </ol>
+
+            <!-- The duplicate is visual only; identical geometry makes the loop seamless. -->
+            <ol class="organizations__list" aria-hidden="true">
+              <li class="organization-item organization-item--berkeley"><span><img class="organization-item__logo organization-item__logo--light-source" src="https://brand.berkeley.edu/wp-content/themes/gallantry/dist/imgs/logo-uc-berkeley.svg" alt="" /><span class="organization-item__name">UC Berkeley</span><span class="organization-item__detail">BEAR Center</span></span></li>
+              <li class="organization-item"><span><img class="organization-item__logo organization-item__logo--bart" src="https://www.bart.gov/themes/custom/bart/logo.svg" alt="" /><span class="organization-item__name">Bay Area Rapid Transit</span><span class="organization-item__detail">AI &amp; software research</span></span></li>
+              <li class="organization-item"><span><img class="organization-item__logo organization-item__logo--light-source" src="https://projectaccess.org/wp-content/uploads/2025/05/Frame-5.svg" alt="" /><span class="organization-item__name">Project Access</span><span class="organization-item__detail">Education access</span></span></li>
+              <li class="organization-item"><span><img class="organization-item__logo organization-item__logo--light-source" src="https://cdn.prod.website-files.com/69e9886677c236bd2e0f503b/69e9886677c236bd2e0f50d0_logo_beca-cometa_about.svg" alt="" /><span class="organization-item__name">Beca Cometa</span><span class="organization-item__detail">Intercorp initiative</span></span></li>
+              <li class="organization-item"><span><img class="organization-item__logo organization-item__logo--perueduca" src="https://3.bp.blogspot.com/-v5UvA49JEbw/U8VgHLEns1I/AAAAAAAACZA/Rl6_43dFAQ8/s1600/PERUEDUCA.png" alt="" /><span class="organization-item__name">PeruEduca</span><span class="organization-item__detail">Public education</span></span></li>
+              <li class="organization-item"><span><img class="organization-item__logo" src="https://d11jve6usk2wa9.cloudfront.net/platform/31808/assets/logo.png" alt="" /><span class="organization-item__name">Tilting Futures</span><span class="organization-item__detail">Community initiative</span></span></li>
+              <li class="organization-item"><span><img class="organization-item__logo" src="https://ozcf.co.za/wp-content/uploads/2024/07/logo-proper-blue-1.png" alt="" /><span class="organization-item__name">Oranjezicht City Farm</span><span class="organization-item__detail">Environmental education</span></span></li>
+              <li class="organization-item"><span><img class="organization-item__logo organization-item__logo--world-literacy" src="https://worldliteracyfoundation.org/wp-content/uploads/2026/01/cropped-WLF-LOGO-300x300-CUTED.png" alt="" /><span class="organization-item__name">World Literacy Foundation</span><span class="organization-item__detail">Education outreach</span></span></li>
+              <li class="organization-item"><span><img class="organization-item__logo organization-item__logo--hundred" src="https://www.biokind.org/assets/press/hundred.png" alt="" /><span class="organization-item__name">HundrED</span><span class="organization-item__detail">Education innovation</span></span></li>
+              <li class="organization-item"><span><img class="organization-item__logo organization-item__logo--incognity" src="https://lh3.googleusercontent.com/a-/AOh14GhjZPAd1S5k8Kpt2RgfvZKn2qYqBgoSYmwcYoyF=s2048-c" alt="" /><span class="organization-item__name">Incognity Academy</span><span class="organization-item__detail">Education evaluation</span></span></li>
+              <li class="organization-item"><span><span class="organization-item__logo organization-item__logo--dino-wordmark">DinoApply</span><span class="organization-item__name">DinoApply</span><span class="organization-item__detail">Independent product</span></span></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact" aria-label="Contact">
+      <div class="section__inner reveal">
+        <div class="contact__footer-grid">
+          <div>
+            <p class="contact__name">Carlos Atalluz</p>
+            <p class="contact__identity">UC Berkeley · Computer Science<br />Full-stack &amp; AI systems</p>
+            <a class="contact__conversation" href="mailto:carlos.ganoza@berkeley.edu">Start a conversation <span class="arrow" aria-hidden="true">↗</span></a>
+          </div>
+
+          <nav aria-label="Portfolio navigation">
+            <p class="contact__column-title">Explore</p>
+            <a href="#home">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#featured-projects">Work</a>
+            <a href="#experience">Experience</a>
+            <a href="#research">Research</a>
+          </nav>
+
+          <div>
+            <p class="contact__column-title">Current focus</p>
+            <p>AI products &amp; workflows</p>
+            <p>Math, physics &amp; AI research</p>
+            <p>Software engineering</p>
+            <p>Education &amp; access</p>
+          </div>
+
+          <div>
+            <p class="contact__column-title">Connect</p>
+            <a href="mailto:carlos.ganoza@berkeley.edu">carlos.ganoza@berkeley.edu <span class="arrow" aria-hidden="true">↗</span></a>
+            <div class="contact__external-links">
+              <a class="contact__icon-link" href="https://www.linkedin.com/in/carlos-ganoza-atl/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.3 8.2H2.8V21h3.5V8.2ZM4.55 3A2.05 2.05 0 1 0 4.5 7.1 2.05 2.05 0 0 0 4.55 3ZM21.2 13.65c0-3.87-2.07-5.67-4.83-5.67-2.23 0-3.23 1.23-3.78 2.09V8.2H9.1V21h3.5v-6.34c0-1.67.32-3.28 2.39-3.28 2.04 0 2.07 1.91 2.07 3.39V21h3.5v-7.35Z" /></svg><span class="sr-only">LinkedIn</span>
+              </a>
+              <a class="contact__icon-link" href="https://github.com/CarlosGanoza?tab=repositories" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.3a9.7 9.7 0 0 0-3.07 18.9c.49.09.67-.21.67-.47v-1.69c-2.74.6-3.32-1.17-3.32-1.17-.45-1.14-1.09-1.44-1.09-1.44-.89-.61.07-.6.07-.6.98.07 1.5 1 1.5 1 .88 1.49 2.29 1.06 2.85.81.09-.63.34-1.06.62-1.3-2.19-.25-4.5-1.09-4.5-4.88 0-1.08.39-1.96 1.01-2.65-.1-.25-.44-1.26.1-2.63 0 0 .83-.26 2.7 1.01a9.45 9.45 0 0 1 4.92 0c1.87-1.27 2.7-1.01 2.7-1.01.54 1.37.2 2.38.1 2.63.63.69 1.01 1.57 1.01 2.65 0 3.8-2.32 4.62-4.52 4.87.35.3.67.9.67 1.82v2.7c0 .26.18.57.68.47A9.7 9.7 0 0 0 12 2.3Z" /></svg><span class="sr-only">GitHub</span>
+              </a>
+              <a class="contact__icon-link" href="assets/carlos_resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open resume PDF">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.8h8.2L19 7.6v13.6H6V2.8Zm7.3 1.9v3.8h3.8l-3.8-3.8ZM8.5 12h8v1.5h-8V12Zm0 3.2h8v1.5h-8v-1.5Zm0-6.4h2.7v1.5H8.5V8.8Z" /></svg><span class="sr-only">Resume</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact__closing">
+          <p>© <span id="current-year">2026</span> Carlos Atalluz</p>
+          <p>Built with HTML, CSS &amp; JavaScript</p>
+          <a href="#cinematic-hero">Back to top <span class="arrow" aria-hidden="true">↑</span></a>
+        </div>
+      </div>
+    </section>
   </main>
-
-  <button id="back-to-top" class="back-to-top" type="button" aria-label="Back to top">Back to top</button>
 
   <div id="video-modal" class="video-modal" role="dialog" aria-modal="true" aria-labelledby="video-modal-title" hidden>
     <div class="video-modal__backdrop" data-video-close></div>

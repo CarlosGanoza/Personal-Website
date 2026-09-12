@@ -1,17 +1,39 @@
 {
   "projects": [
     {
-      "title": "OpenApply",
-      "tagline": "Scholarship help for every applicant.",
-      "problem": "Applicants needed deadlines, guides, and support in one place.",
-      "built": "Built a scholarship workspace with tools, training, and applicant guidance.",
-      "result": "Delivered a clearer starting point for scholarship workflows.",
-      "status": "real",
-      "thumbnail": "assets/projects/openapply.png",
-      "stack": ["Next.js", "React", "TypeScript", "Prisma", "OpenAI", "Analytics Dashboards"],
-      "links": {
-        "github": "https://github.com/CarlosGanoza"
+      "title": "DinoApply",
+      "tagline": "Essay review built as an engineered pipeline, not a single model call.",
+      "problem": "Feedback on an application essay is only useful when it is specific to the draft in front of it. One generation pass returns notes that cite nothing, repeat each other, and give no signal about which of them to trust.",
+      "built": "The review path runs as six separate stages instead of a single generation call, so each step can be reasoned about, measured, and repaired on its own.",
+      "result": "Annotations tied to the student's own words, calibrated and deduplicated before they reach the student.",
+      "phase": "Active build",
+      "pipeline": [
+        { "stage": "Essay mapping", "detail": "The draft is segmented into a structural map before any feedback is generated." },
+        { "stage": "Structured annotation", "detail": "Feedback is generated as structured records rather than free prose." },
+        { "stage": "Grounding", "detail": "Every annotation is anchored to spans in the source text." },
+        { "stage": "Calibration", "detail": "Severity and confidence are calibrated before anything reaches the student." },
+        { "stage": "Semantic deduplication", "detail": "Overlapping notes are collapsed by meaning rather than by string match." }
+      ],
+      "crosscutting": {
+        "label": "Across every stage",
+        "stage": "Failure recovery",
+        "detail": "Malformed or partial model output is repaired rather than dropped, at whichever stage it occurs."
       },
+      "roadmap": [
+        "US and UK application workflows",
+        "SAT and related exam preparation",
+        "Essay and activity guidance",
+        "Counselor-to-student support"
+      ],
+      "status": "real",
+      "video": {
+        "src": "assets/projects/dinoapply-demo.mp4?v=20260911",
+        "poster": "assets/projects/dinoapply.png",
+        "description": "A short DinoApply product introduction and demo."
+      },
+      "thumbnail": "assets/projects/dinoapply.png",
+      "stack": ["Next.js", "React", "TypeScript", "Prisma", "OpenAI", "Analytics Dashboards"],
+      "links": { "visit": "https://dinoapply.vercel.app/" },
       "featured": true
     },
     {
@@ -21,25 +43,10 @@
       "built": "Built document intake, signal extraction, and explainable recommendation flows.",
       "result": "Made sponsorship reviews easier to inspect and defend.",
       "status": "real",
+      "phase": "Built product",
       "thumbnail": "assets/projects/signalsponsor.png",
       "stack": ["Next.js", "TypeScript", "Prisma", "SQLite", "Zod", "Document Ingestion"],
-      "links": {
-        "github": "https://github.com/CarlosGanoza"
-      },
-      "featured": true
-    },
-    {
-      "title": "Dependency Migration Planner",
-      "tagline": "Detect risky dependencies and map a realistic migration path.",
-      "problem": "Teams needed early risk detection before abandoned packages broke production work.",
-      "built": "Built repo scanning, dependency risk scoring, and staged migration planning.",
-      "result": "Produced practical migration guidance for JS/TS repositories.",
-      "status": "real",
-      "thumbnail": "assets/projects/dependency-planner.png",
-      "stack": ["TypeScript", "Codemods", "CLI Testing", "UI Testing", "End-to-End Testing"],
-      "links": {
-        "github": "https://github.com/CarlosGanoza"
-      },
+      "links": { "github": "https://github.com/CarlosGanoza/Sponsorship-Diligence-Engine" },
       "featured": true
     },
     {
@@ -50,12 +57,50 @@
       "result": "Generated architecture views for 100K+ LOC workflows.",
       "metrics_note": "BART - Feb 2026 to Present",
       "status": "real",
+      "phase": "Ongoing",
       "thumbnail": "assets/projects/code-analyzer.png",
       "stack": ["Python", "SQL", "LikeC4", "Mermaid", "Graphviz", "Linux/Git"],
-      "links": {
-        "github": "https://github.com/CarlosGanoza"
-      },
+      "links": { "github": "https://github.com/CarlosGanoza/BART-Codebase-Analyzer" },
+      "featured": true
+    },
+    {
+      "title": "Dependency Migration Planner",
+      "tagline": "Detect risky dependencies and map a realistic migration path.",
+      "problem": "Teams needed early risk detection before abandoned packages broke production work.",
+      "built": "Built repo scanning, dependency risk scoring, and staged migration planning.",
+      "result": "Produced practical migration guidance for JS/TS repositories.",
+      "status": "real",
+      "phase": "Built tool",
+      "thumbnail": "assets/projects/dependency-planner.png",
+      "stack": ["TypeScript", "Codemods", "CLI Testing", "UI Testing", "End-to-End Testing"],
+      "links": { "github": "https://github.com/CarlosGanoza/Dependency-Migration-Planner" },
       "featured": false
+    },
+    {
+      "title": "AeroNova Aerospace Portfolio",
+      "tagline": "Full-stack portfolio site for an aerospace engineering firm.",
+      "problem": "An aerospace client needed a professional web presence that conveyed technical credibility and was easy to maintain.",
+      "built": "Built and deployed a fully responsive TypeScript site with clean information architecture and client-facing content management.",
+      "result": "Delivered a production-ready portfolio elevating the client's professional brand.",
+      "status": "real",
+      "phase": "Delivered",
+      "stack": ["TypeScript", "Next.js", "React", "Git"],
+      "links": { "github": "https://github.com/CarlosGanoza/AeroNova-Aerospace-Portfolio" },
+      "featured": false,
+      "display": false
+    },
+    {
+      "title": "NovaMart E-Commerce",
+      "tagline": "End-to-end e-commerce platform with product management and checkout.",
+      "problem": "A retail client needed a full-featured e-commerce experience with inventory management and a smooth checkout flow.",
+      "built": "Built product catalog, cart, authentication, and order management with TypeScript and modern web tooling.",
+      "result": "Delivered a complete, shippable e-commerce application.",
+      "status": "real",
+      "phase": "Delivered",
+      "stack": ["TypeScript", "Next.js", "React", "Prisma", "SQLite"],
+      "links": { "github": "https://github.com/CarlosGanoza/NovaMart-Ecommerce" },
+      "featured": false,
+      "display": false
     },
     {
       "title": "Client Websites & Reporting Workflows",
@@ -66,10 +111,21 @@
       "status": "real",
       "thumbnail": "assets/projects/client-websites.svg",
       "stack": ["JavaScript", "Git", "Excel", "Google Sheets", "Scripting"],
-      "links": {
-        "github": "https://github.com/CarlosGanoza"
-      },
+      "links": { "github": "https://github.com/CarlosGanoza?tab=repositories" },
       "featured": false
+    },
+    {
+      "title": "CS 61A: Ants Vs. SomeBees",
+      "tagline": "A Python strategy game built as part of UC Berkeley's CS 61A curriculum.",
+      "problem": "The project required modeling a turn-based tower-defense game with clear rules and interacting game entities.",
+      "built": "Implemented object-oriented game mechanics, insect behaviors, resource management, and the simulation loop in Python.",
+      "result": "A working interactive strategy game that applies core abstraction and program-design concepts.",
+      "status": "real",
+      "phase": "Course project",
+      "thumbnail": "assets/projects/ants-vs-somebees.png",
+      "stack": ["Python", "Object-Oriented Programming", "Game Logic", "Testing"],
+      "featured": false,
+      "display": false
     }
   ]
 }
