@@ -28,7 +28,6 @@
       "status": "real",
       "video": {
         "src": "assets/projects/dinoapply-demo.mp4?v=20260911",
-        "poster": "assets/projects/dinoapply.png",
         "description": "A short DinoApply product introduction and demo."
       },
       "thumbnail": "assets/projects/dinoapply.png",

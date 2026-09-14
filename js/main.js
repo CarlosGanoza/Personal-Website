@@ -123,7 +123,11 @@ const openVideoModal = (video = {}, title = "Project") => {
   videoModalTitle.textContent = `${title} demo video`;
   videoModalPlayer.setAttribute("aria-label", `${title} demo video`);
   videoModalPlayer.src = buildPath(video.src);
-  videoModalPlayer.poster = buildPath(video.poster || FALLBACK_VIDEO_POSTER);
+  if (video.poster) {
+    videoModalPlayer.poster = buildPath(video.poster);
+  } else {
+    videoModalPlayer.removeAttribute("poster");
+  }
   videoModalPlayer.load();
 
   const caption = video.description?.trim() || "";
@@ -136,6 +140,7 @@ const openVideoModal = (video = {}, title = "Project") => {
   videoModal.classList.add("is-open");
   document.body.classList.add("modal-open");
   getFocusableElements(videoModal)[0]?.focus();
+  videoModalPlayer.play().catch(() => {});
 };
 
 const handleModalKeydown = (event) => {
@@ -180,7 +185,7 @@ const buildMedia = (project) => {
     /* The card gives a silent preview; the accessible control opens the full demo. */
     const video = document.createElement("video");
     video.src = buildPath(videoData.src);
-    video.poster = buildPath(videoData.poster || project.thumbnail || FALLBACK_VIDEO_POSTER);
+    if (videoData.poster) video.poster = buildPath(videoData.poster);
     video.autoplay = true;
     video.loop = true;
     video.muted = true;

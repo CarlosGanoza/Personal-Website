@@ -193,6 +193,7 @@ a {
 /* Understated inline link: ink text, hairline rule, blue on hover */
 .hero__links a,
 .case__links a,
+.research-card > a,
 .contact__meta a,
 .site-footer a {
   position: relative;
@@ -203,15 +204,24 @@ a {
 }
 
 .hero__links a:hover,
+.hero__links a:focus-visible,
 .case__links a:hover,
+.case__links a:focus-visible,
+.research-card > a:hover,
+.research-card > a:focus-visible,
 .contact__meta a:hover,
+.contact__meta a:focus-visible,
 .site-footer a:hover {
   color: var(--blue);
   border-bottom-color: var(--blue);
 }
 
 .hero__links a:hover .arrow,
+.hero__links a:focus-visible .arrow,
 .case__links a:hover .arrow,
+.case__links a:focus-visible .arrow,
+.research-card > a:hover .arrow,
+.research-card > a:focus-visible .arrow,
 .site-footer a:hover .arrow {
   transform: translate(2px, -2px);
 }
@@ -3232,8 +3242,8 @@ body.nav-open .masthead .nav-toggle span {
 }
 
 .organization-item__logo--hundred {
-  width: 13rem !important;
-  height: 5.8rem !important;
+  width: 16rem !important;
+  height: 6.5rem !important;
 }
 
 .organization-item__logo--world-literacy {
@@ -3804,10 +3814,10 @@ body.nav-open .masthead .nav-toggle span {
 
 .site-footer::before { display: none; }
 
-/* Certificates: a single guinda field with space for credentials below. */
+/* Credentials remain one continuous guinda editorial field: the statement
+   leads, then the detail follows on the same Berkeley photograph. */
 .certificates {
   position: relative;
-  min-height: clamp(21rem, 28vw, 30rem);
   background:
     linear-gradient(rgba(99, 18, 42, 0.84), rgba(99, 18, 42, 0.84)),
     url("../assets/certificates-campus.png") center / cover no-repeat;
@@ -3815,13 +3825,16 @@ body.nav-open .masthead .nav-toggle span {
 
 .certificates__gallery {
   width: min(100% - (var(--gutter) * 2), var(--shell));
-  min-height: inherit;
   margin-inline: auto;
+  padding-block: clamp(2.75rem, 4vw, 3.75rem);
+}
+
+.certificates__intro {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  min-height: clamp(16rem, 20vw, 21rem);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   column-gap: var(--col-gap);
   align-items: center;
-  padding-block: clamp(2.5rem, 5vw, 4.5rem);
 }
 
 .certificates__copy {
@@ -3854,18 +3867,111 @@ body.nav-open .masthead .nav-toggle span {
   line-height: 0.95;
 }
 
-.certificates__title h2 span {
+.certificates__title h2 > .motion-word {
+  color: #fff;
+  font-weight: 800;
+}
+
+.certificates__title h2 > span:not(.motion-word),
+.certificates__title h2 > span:not(.motion-word) > .motion-word {
   color: rgba(255, 255, 255, 0.62);
   font-weight: 500;
 }
 
-@media (max-width: 760px) {
-  .certificates__gallery {
-    display: block;
+.certificates__details {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--col-gap);
+  padding-top: clamp(1.6rem, 2.8vw, 2.6rem);
+}
+
+.certificates__column:first-child { grid-column: 1 / span 5; }
+.certificates__column:last-child { grid-column: 7 / -1; }
+
+.certificates__column > .label {
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.certificates__list {
+  margin-top: 1.2rem;
+}
+
+.certificate-entry {
+  padding-block: 1.05rem 1.15rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.certificate-entry:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.certificate-entry h3 {
+  max-width: 28ch;
+  color: #fff;
+  font-size: clamp(1.14rem, 1.55vw, 1.45rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.12;
+}
+
+.certificate-entry > p {
+  margin-top: 0.52rem;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.94rem;
+  line-height: 1.5;
+}
+
+.certificate-entry a {
+  display: inline-block;
+  margin-top: 1rem;
+  padding-bottom: 0.15em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.42);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.35;
+  transition: color 200ms var(--ease), border-color 200ms var(--ease);
+}
+
+.certificate-entry a:hover,
+.certificate-entry a:focus-visible {
+  border-bottom-color: #fff;
+  color: #fff;
+}
+
+.certificate-entry a:hover .arrow,
+.certificate-entry a:focus-visible .arrow {
+  transform: translate(2px, -2px);
+}
+
+.reveal .certificates__details {
+  opacity: 0;
+  transform: translateY(1rem);
+}
+
+.reveal.is-visible .certificates__details {
+  animation: motion-rise 680ms var(--ease) both;
+  animation-delay: 180ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal .certificates__details {
+    opacity: 1;
+    transform: none;
+    animation: none;
   }
+}
+
+@media (max-width: 760px) {
+  .certificates__intro,
+  .certificates__details { display: block; }
 
   .certificates__title {
     margin-top: 3.2rem;
+  }
+
+  .certificates__column + .certificates__column {
+    margin-top: 3.25rem;
   }
 }
 
