@@ -86,7 +86,7 @@
       "stack": ["TypeScript", "Next.js", "React", "Git"],
       "links": { "github": "https://github.com/CarlosGanoza/AeroNova-Aerospace-Portfolio" },
       "featured": false,
-      "display": false
+      "display": true
     },
     {
       "title": "NovaMart E-Commerce",
@@ -100,18 +100,6 @@
       "links": { "github": "https://github.com/CarlosGanoza/NovaMart-Ecommerce" },
       "featured": false,
       "display": false
-    },
-    {
-      "title": "Client Websites & Reporting Workflows",
-      "tagline": "Freelance web delivery for small businesses and personal brands.",
-      "problem": "Clients needed maintainable websites plus lightweight dashboards and reporting systems.",
-      "built": "Built and deployed 8+ websites with dashboards, reporting workflows, scripting, Git-based iterations, and client-facing features.",
-      "result": "Delivered production-ready websites and cleaner client operations across multiple engagements.",
-      "status": "real",
-      "thumbnail": "assets/projects/client-websites.svg",
-      "stack": ["JavaScript", "Git", "Excel", "Google Sheets", "Scripting"],
-      "links": { "github": "https://github.com/CarlosGanoza?tab=repositories" },
-      "featured": false
     },
     {
       "title": "CS 61A: Ants Vs. SomeBees",
