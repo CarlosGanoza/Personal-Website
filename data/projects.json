@@ -99,7 +99,7 @@
       "stack": ["TypeScript", "Next.js", "React", "Prisma", "SQLite"],
       "links": { "github": "https://github.com/CarlosGanoza/NovaMart-Ecommerce" },
       "featured": false,
-      "display": false
+      "display": true
     },
     {
       "title": "CS 61A: Ants Vs. SomeBees",
@@ -111,8 +111,9 @@
       "phase": "Course project",
       "thumbnail": "assets/projects/ants-vs-somebees.png",
       "stack": ["Python", "Object-Oriented Programming", "Game Logic", "Testing"],
+      "links": { "github": "https://github.com/CarlosGanoza/Berkeley-CS61A-Projects" },
       "featured": false,
-      "display": false
+      "display": true
     }
   ]
 }
