@@ -473,7 +473,9 @@ const renderProjects = async () => {
     const projects = Array.isArray(data.projects)
       ? data.projects.filter((project) => project.display !== false)
       : [];
-    const selected = projects.slice(0, 5);
+    /* Keep every visible project in the showcase; the disclosure controls
+       visibility after the first three without dropping later work. */
+    const selected = projects;
 
     featuredProjectsGrid.replaceChildren();
     additionalProjectsGrid.replaceChildren();
@@ -701,6 +703,77 @@ const setupActiveNav = () => {
   update();
 };
 
+/* Decorative only: the sparkle field adds atmosphere without adding content
+   or changing the accessible reading order. */
+const setupSparkleFields = () => {
+  const fields = [
+    [".hero", [
+      ["10%", "8%", "3.5rem", "#55aaff", "-1s", "7.2s"],
+      ["30%", "12%", "1.35rem", "#b879ff", "-4.8s", "8.6s"],
+      ["56%", "43%", "2.1rem", "#61e9ff", "-2.2s", "6.8s"],
+      ["70%", "5%", "1.15rem", "#55aaff", "-6.1s", "9.4s"],
+      ["78%", "27%", "2.7rem", "#f15cff", "-3.4s", "10.2s"],
+      ["22%", "53%", "1.65rem", "#61e9ff", "-7.2s", "7.8s"],
+      ["44%", "4%", "1rem", "#f15cff", "-5.7s", "11.3s"],
+      ["88%", "58%", "1.5rem", "#55aaff", "-2.9s", "8.9s"]
+    ]],
+    ["#featured-projects", [
+      ["8%", "18%", "1.25rem", "#ff5a6f", "-2.5s", "7.4s"],
+      ["18%", "46%", "2.4rem", "#55aaff", "-5.2s", "9.1s"],
+      ["36%", "7%", "1.55rem", "#d16cff", "-1.3s", "6.6s"],
+      ["48%", "68%", "1.15rem", "#ff5a6f", "-6.7s", "8.8s"],
+      ["72%", "32%", "2.8rem", "#55aaff", "-3.9s", "10.4s"],
+      ["86%", "89%", "1.35rem", "#d16cff", "-8.1s", "7.1s"],
+      ["61%", "93%", "1.05rem", "#ff5a6f", "-4.4s", "9.8s"],
+      ["29%", "84%", "1.8rem", "#55e6ff", "-7.8s", "11.6s"],
+      ["93%", "53%", "1.1rem", "#ff5a6f", "-1.9s", "8.1s"],
+      ["42%", "25%", "1.35rem", "#d16cff", "-5.5s", "7.3s"]
+    ]],
+    ["#research", [
+      ["9%", "13%", "1.4rem", "#ff5a6f", "-5.4s", "8.2s"],
+      ["17%", "58%", "2.55rem", "#55aaff", "-1.7s", "10.1s"],
+      ["32%", "3%", "1.1rem", "#a778ff", "-7.2s", "6.9s"],
+      ["54%", "74%", "1.55rem", "#ff5a6f", "-3.3s", "8.7s"],
+      ["71%", "21%", "2.2rem", "#55aaff", "-6.6s", "9.6s"],
+      ["86%", "94%", "1.2rem", "#a778ff", "-2.1s", "7.5s"],
+      ["63%", "51%", "1rem", "#ff5a6f", "-8.4s", "11.2s"],
+      ["44%", "28%", "1.65rem", "#55e6ff", "-4.1s", "9.9s"],
+      ["78%", "7%", "1.05rem", "#ff5a6f", "-6.8s", "6.4s"],
+      ["91%", "71%", "1.45rem", "#a778ff", "-1.6s", "10.8s"]
+    ]],
+    [".organizations", [
+      ["12%", "9%", "1.2rem", "#55aaff", "-6.4s", "7.8s"],
+      ["27%", "35%", "2.5rem", "#ff5a6f", "-2.7s", "10.5s"],
+      ["18%", "79%", "1.4rem", "#d16cff", "-4.9s", "8.4s"],
+      ["52%", "17%", "1.05rem", "#55aaff", "-1.1s", "6.7s"],
+      ["67%", "62%", "2.15rem", "#ff5a6f", "-7.5s", "9.2s"],
+      ["82%", "87%", "1.35rem", "#d16cff", "-3.8s", "11s"],
+      ["39%", "48%", "1.65rem", "#55e6ff", "-5.9s", "7.6s"],
+      ["74%", "29%", "1rem", "#ff5a6f", "-1.4s", "9.7s"],
+      ["89%", "72%", "2rem", "#55aaff", "-7.1s", "12.2s"]
+    ]]
+  ];
+
+  fields.forEach(([selector, sparks]) => {
+    const section = document.querySelector(selector);
+    if (!section || section.querySelector(":scope > .sparkle-field")) return;
+
+    const field = createElement("div", "sparkle-field");
+    field.setAttribute("aria-hidden", "true");
+    sparks.forEach(([top, left, size, color, delay, duration]) => {
+      const spark = createElement("span", "sparkle-field__star");
+      spark.style.setProperty("--sparkle-top", top);
+      spark.style.setProperty("--sparkle-left", left);
+      spark.style.setProperty("--sparkle-size", size);
+      spark.style.setProperty("--sparkle-color", color);
+      spark.style.setProperty("--sparkle-delay", delay);
+      spark.style.setProperty("--sparkle-duration", duration);
+      field.appendChild(spark);
+    });
+    section.prepend(field);
+  });
+};
+
 const init = async () => {
   if (currentYear) currentYear.textContent = String(new Date().getFullYear());
   setupHeroVideo();
@@ -712,6 +785,7 @@ const init = async () => {
   setupFeaturedProjectsToggle();
   setupHeadingMotion();
   setupReveal();
+  setupSparkleFields();
   setupActiveNav();
 };
 
