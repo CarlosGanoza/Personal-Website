@@ -70,13 +70,13 @@
         <video
           id="hero-video-element"
           class="hero-video__media"
-          src="assets/hero-video.mp4"
+          data-src="assets/hero-video-fast.mp4"
           poster="assets/hero-poster.jpg"
           autoplay
           muted
           loop
           playsinline
-          preload="auto"
+          preload="none"
           aria-hidden="true"
         ></video>
         <div class="hero-video__overlay" aria-hidden="true"></div>
@@ -112,7 +112,7 @@
     </section>
 
     <section id="home" class="hero" aria-labelledby="hero-heading">
-      <img class="hero__flag" src="assets/peru-flag.png" alt="Peruvian flag" width="1254" height="1254" />
+      <img class="hero__flag" src="assets/peru-flag.png" alt="Peruvian flag" width="1254" height="1254" decoding="async" />
       <div class="hero__inner">
         <div class="hero__text reveal">
           <p class="label hero__eyebrow">
@@ -270,7 +270,7 @@
           <article class="research-card research-card--ai">
             <p class="label">AI research <span aria-hidden="true">/</span> Current</p>
             <figure class="research-card__media">
-              <img src="assets/research/jupyter-lecture.jpg" alt="UC Berkeley students learning with Jupyter notebooks in a lecture hall" />
+              <img src="assets/research/jupyter-lecture.jpg" alt="UC Berkeley students learning with Jupyter notebooks in a lecture hall" loading="lazy" decoding="async" />
             </figure>
             <h3>AI for educational<br />assessment systems</h3>
             <p>Contributing to research on AI, educational assessment, and psychometrics at UC Berkeley’s BEAR Center.</p>
@@ -279,7 +279,7 @@
           <article class="research-card research-card--math">
             <p class="label">Mathematics <span aria-hidden="true">/</span> 2025</p>
             <figure class="research-card__media">
-              <img src="assets/research/evans-hall.jpg" alt="Evans Hall at UC Berkeley, home to the mathematics department" />
+              <img src="assets/research/evans-hall.jpg" alt="Evans Hall at UC Berkeley, home to the mathematics department" loading="lazy" decoding="async" />
             </figure>
             <h3>Modeling 3D volumes<br />with Lagrange multipliers</h3>
             <p>Modeled a bottle-like 3D shape with Lagrange multipliers and integral calculus, then checked the result numerically.</p>
@@ -288,7 +288,7 @@
           <article class="research-card research-card--physics">
             <p class="label">Physics <span aria-hidden="true">/</span> 2023</p>
             <figure class="research-card__media">
-              <img src="assets/research/leconte-physics.jpg" alt="LeConte Hall, UC Berkeley's physics building" />
+              <img src="assets/research/leconte-physics.jpg" alt="LeConte Hall, UC Berkeley's physics building" loading="lazy" decoding="async" />
             </figure>
             <h3>Gas volume &amp; mass<br />at ambient conditions</h3>
             <p>Investigated gas-volume and mass relationships through theoretical modeling and calculations based on the ideal-gas model.</p>
@@ -323,70 +323,70 @@
             <ol class="organizations__list">
               <li class="organization-item organization-item--berkeley">
                 <a href="https://www.berkeley.edu/" target="_blank" rel="noopener noreferrer" aria-label="University of California, Berkeley">
-                  <img class="organization-item__logo organization-item__logo--light-source" src="https://brand.berkeley.edu/wp-content/themes/gallantry/dist/imgs/logo-uc-berkeley.svg" alt="UC Berkeley logo" />
+                  <img class="organization-item__logo organization-item__logo--light-source organization-item__logo--berkeley" src="https://brand.berkeley.edu/wp-content/themes/gallantry/dist/imgs/logo-uc-berkeley.svg" alt="UC Berkeley logo" loading="lazy" decoding="async" />
                   <span class="organization-item__name">UC Berkeley</span>
                   <span class="organization-item__detail">BEAR Center</span>
                 </a>
               </li>
               <li class="organization-item">
                 <a href="https://www.bart.gov/" target="_blank" rel="noopener noreferrer" aria-label="Bay Area Rapid Transit">
-                  <img class="organization-item__logo organization-item__logo--bart" src="https://www.bart.gov/themes/custom/bart/logo.svg" alt="BART logo" />
+                  <img class="organization-item__logo organization-item__logo--bart" src="https://www.bart.gov/themes/custom/bart/logo.svg" alt="BART logo" loading="lazy" decoding="async" />
                   <span class="organization-item__name">Bay Area Rapid Transit</span>
                   <span class="organization-item__detail">AI &amp; software research</span>
                 </a>
               </li>
-              <li class="organization-item">
+              <li class="organization-item organization-item--access">
                 <a href="https://projectaccess.org/" target="_blank" rel="noopener noreferrer" aria-label="Project Access">
-                  <img class="organization-item__logo organization-item__logo--light-source" src="https://projectaccess.org/wp-content/uploads/2025/05/Frame-5.svg" alt="Project Access logo" />
+                  <img class="organization-item__logo organization-item__logo--light-source" src="https://projectaccess.org/wp-content/uploads/2025/05/Frame-5.svg" alt="Project Access logo" loading="lazy" decoding="async" />
                   <span class="organization-item__name">Project Access</span>
                   <span class="organization-item__detail">Education access</span>
                 </a>
               </li>
               <li class="organization-item">
                 <a href="https://www.becacometa.com/" target="_blank" rel="noopener noreferrer" aria-label="Beca Cometa">
-                  <img class="organization-item__logo organization-item__logo--light-source" src="https://cdn.prod.website-files.com/69e9886677c236bd2e0f503b/69e9886677c236bd2e0f50d0_logo_beca-cometa_about.svg" alt="Beca Cometa logo" />
+                  <img class="organization-item__logo organization-item__logo--light-source organization-item__logo--cometa" src="https://cdn.prod.website-files.com/69e9886677c236bd2e0f503b/69e9886677c236bd2e0f50d0_logo_beca-cometa_about.svg" alt="Beca Cometa logo" loading="lazy" decoding="async" />
                   <span class="organization-item__name">Beca Cometa</span>
                   <span class="organization-item__detail">Intercorp initiative</span>
                 </a>
               </li>
               <li class="organization-item">
                 <a href="https://www.perueduca.pe/" target="_blank" rel="noopener noreferrer" aria-label="PeruEduca">
-                  <img class="organization-item__logo organization-item__logo--perueduca" src="https://3.bp.blogspot.com/-v5UvA49JEbw/U8VgHLEns1I/AAAAAAAACZA/Rl6_43dFAQ8/s1600/PERUEDUCA.png" alt="PeruEduca logo" />
+                  <img class="organization-item__logo organization-item__logo--perueduca" src="https://3.bp.blogspot.com/-v5UvA49JEbw/U8VgHLEns1I/AAAAAAAACZA/Rl6_43dFAQ8/s1600/PERUEDUCA.png" alt="PeruEduca logo" loading="lazy" decoding="async" />
                   <span class="organization-item__name">PeruEduca</span>
                   <span class="organization-item__detail">Public education</span>
                 </a>
               </li>
               <li class="organization-item">
                 <a href="https://tiltingfutures.org/" target="_blank" rel="noopener noreferrer" aria-label="Tilting Futures">
-                  <img class="organization-item__logo" src="https://d11jve6usk2wa9.cloudfront.net/platform/31808/assets/logo.png" alt="Tilting Futures logo" />
+                  <img class="organization-item__logo" src="https://d11jve6usk2wa9.cloudfront.net/platform/31808/assets/logo.png" alt="Tilting Futures logo" loading="lazy" decoding="async" />
                   <span class="organization-item__name">Tilting Futures</span>
                   <span class="organization-item__detail">Community initiative</span>
                 </a>
               </li>
               <li class="organization-item">
                 <a href="https://ozcf.co.za/" target="_blank" rel="noopener noreferrer" aria-label="Oranjezicht City Farm">
-                  <img class="organization-item__logo" src="https://ozcf.co.za/wp-content/uploads/2024/07/logo-proper-blue-1.png" alt="Oranjezicht City Farm logo" />
+                  <img class="organization-item__logo" src="https://ozcf.co.za/wp-content/uploads/2024/07/logo-proper-blue-1.png" alt="Oranjezicht City Farm logo" loading="lazy" decoding="async" />
                   <span class="organization-item__name">Oranjezicht City Farm</span>
                   <span class="organization-item__detail">Environmental education</span>
                 </a>
               </li>
               <li class="organization-item">
                 <a href="https://worldliteracyfoundation.org/" target="_blank" rel="noopener noreferrer" aria-label="World Literacy Foundation">
-                  <img class="organization-item__logo organization-item__logo--world-literacy" src="https://worldliteracyfoundation.org/wp-content/uploads/2026/01/cropped-WLF-LOGO-300x300-CUTED.png" alt="World Literacy Foundation logo" />
+                  <img class="organization-item__logo organization-item__logo--world-literacy" src="https://worldliteracyfoundation.org/wp-content/uploads/2026/01/cropped-WLF-LOGO-300x300-CUTED.png" alt="World Literacy Foundation logo" loading="lazy" decoding="async" />
                   <span class="organization-item__name">World Literacy Foundation</span>
                   <span class="organization-item__detail">Education outreach</span>
                 </a>
               </li>
               <li class="organization-item">
                 <a href="https://hundred.org/en/" target="_blank" rel="noopener noreferrer" aria-label="HundrED">
-                  <img class="organization-item__logo organization-item__logo--hundred" src="https://www.biokind.org/assets/press/hundred.png" alt="HundrED logo" />
+                  <img class="organization-item__logo organization-item__logo--hundred" src="https://www.biokind.org/assets/press/hundred.png" alt="HundrED logo" loading="lazy" decoding="async" />
                   <span class="organization-item__name">HundrED</span>
                   <span class="organization-item__detail">Education innovation</span>
                 </a>
               </li>
               <li class="organization-item">
                 <a href="https://www.ivoox.com/perfil-incognity-academy_a8_podcaster_26143150_1.html" target="_blank" rel="noopener noreferrer" aria-label="Incognity Academy">
-                  <img class="organization-item__logo organization-item__logo--incognity" src="https://lh3.googleusercontent.com/a-/AOh14GhjZPAd1S5k8Kpt2RgfvZKn2qYqBgoSYmwcYoyF=s2048-c" alt="Incognity Academy logo" />
+                  <img class="organization-item__logo organization-item__logo--incognity" src="assets/organizations/incognity-academy-transparent.png" alt="Incognity Academy logo" loading="lazy" decoding="async" />
                   <span class="organization-item__name">Incognity Academy</span>
                   <span class="organization-item__detail">Education evaluation</span>
                 </a>
@@ -402,16 +402,16 @@
 
             <!-- The duplicate is visual only; identical geometry makes the loop seamless. -->
             <ol class="organizations__list" aria-hidden="true">
-              <li class="organization-item organization-item--berkeley"><span><img class="organization-item__logo organization-item__logo--light-source" src="https://brand.berkeley.edu/wp-content/themes/gallantry/dist/imgs/logo-uc-berkeley.svg" alt="" /><span class="organization-item__name">UC Berkeley</span><span class="organization-item__detail">BEAR Center</span></span></li>
-              <li class="organization-item"><span><img class="organization-item__logo organization-item__logo--bart" src="https://www.bart.gov/themes/custom/bart/logo.svg" alt="" /><span class="organization-item__name">Bay Area Rapid Transit</span><span class="organization-item__detail">AI &amp; software research</span></span></li>
-              <li class="organization-item"><span><img class="organization-item__logo organization-item__logo--light-source" src="https://projectaccess.org/wp-content/uploads/2025/05/Frame-5.svg" alt="" /><span class="organization-item__name">Project Access</span><span class="organization-item__detail">Education access</span></span></li>
-              <li class="organization-item"><span><img class="organization-item__logo organization-item__logo--light-source" src="https://cdn.prod.website-files.com/69e9886677c236bd2e0f503b/69e9886677c236bd2e0f50d0_logo_beca-cometa_about.svg" alt="" /><span class="organization-item__name">Beca Cometa</span><span class="organization-item__detail">Intercorp initiative</span></span></li>
-              <li class="organization-item"><span><img class="organization-item__logo organization-item__logo--perueduca" src="https://3.bp.blogspot.com/-v5UvA49JEbw/U8VgHLEns1I/AAAAAAAACZA/Rl6_43dFAQ8/s1600/PERUEDUCA.png" alt="" /><span class="organization-item__name">PeruEduca</span><span class="organization-item__detail">Public education</span></span></li>
-              <li class="organization-item"><span><img class="organization-item__logo" src="https://d11jve6usk2wa9.cloudfront.net/platform/31808/assets/logo.png" alt="" /><span class="organization-item__name">Tilting Futures</span><span class="organization-item__detail">Community initiative</span></span></li>
-              <li class="organization-item"><span><img class="organization-item__logo" src="https://ozcf.co.za/wp-content/uploads/2024/07/logo-proper-blue-1.png" alt="" /><span class="organization-item__name">Oranjezicht City Farm</span><span class="organization-item__detail">Environmental education</span></span></li>
-              <li class="organization-item"><span><img class="organization-item__logo organization-item__logo--world-literacy" src="https://worldliteracyfoundation.org/wp-content/uploads/2026/01/cropped-WLF-LOGO-300x300-CUTED.png" alt="" /><span class="organization-item__name">World Literacy Foundation</span><span class="organization-item__detail">Education outreach</span></span></li>
-              <li class="organization-item"><span><img class="organization-item__logo organization-item__logo--hundred" src="https://www.biokind.org/assets/press/hundred.png" alt="" /><span class="organization-item__name">HundrED</span><span class="organization-item__detail">Education innovation</span></span></li>
-              <li class="organization-item"><span><img class="organization-item__logo organization-item__logo--incognity" src="https://lh3.googleusercontent.com/a-/AOh14GhjZPAd1S5k8Kpt2RgfvZKn2qYqBgoSYmwcYoyF=s2048-c" alt="" /><span class="organization-item__name">Incognity Academy</span><span class="organization-item__detail">Education evaluation</span></span></li>
+              <li class="organization-item organization-item--berkeley"><span><img class="organization-item__logo organization-item__logo--light-source organization-item__logo--berkeley" src="https://brand.berkeley.edu/wp-content/themes/gallantry/dist/imgs/logo-uc-berkeley.svg" alt="" loading="lazy" decoding="async" /><span class="organization-item__name">UC Berkeley</span><span class="organization-item__detail">BEAR Center</span></span></li>
+              <li class="organization-item"><span><img class="organization-item__logo organization-item__logo--bart" src="https://www.bart.gov/themes/custom/bart/logo.svg" alt="" loading="lazy" decoding="async" /><span class="organization-item__name">Bay Area Rapid Transit</span><span class="organization-item__detail">AI &amp; software research</span></span></li>
+              <li class="organization-item organization-item--access"><span><img class="organization-item__logo organization-item__logo--light-source" src="https://projectaccess.org/wp-content/uploads/2025/05/Frame-5.svg" alt="" loading="lazy" decoding="async" /><span class="organization-item__name">Project Access</span><span class="organization-item__detail">Education access</span></span></li>
+              <li class="organization-item"><span><img class="organization-item__logo organization-item__logo--light-source organization-item__logo--cometa" src="https://cdn.prod.website-files.com/69e9886677c236bd2e0f503b/69e9886677c236bd2e0f50d0_logo_beca-cometa_about.svg" alt="" loading="lazy" decoding="async" /><span class="organization-item__name">Beca Cometa</span><span class="organization-item__detail">Intercorp initiative</span></span></li>
+              <li class="organization-item"><span><img class="organization-item__logo organization-item__logo--perueduca" src="https://3.bp.blogspot.com/-v5UvA49JEbw/U8VgHLEns1I/AAAAAAAACZA/Rl6_43dFAQ8/s1600/PERUEDUCA.png" alt="" loading="lazy" decoding="async" /><span class="organization-item__name">PeruEduca</span><span class="organization-item__detail">Public education</span></span></li>
+              <li class="organization-item"><span><img class="organization-item__logo" src="https://d11jve6usk2wa9.cloudfront.net/platform/31808/assets/logo.png" alt="" loading="lazy" decoding="async" /><span class="organization-item__name">Tilting Futures</span><span class="organization-item__detail">Community initiative</span></span></li>
+              <li class="organization-item"><span><img class="organization-item__logo" src="https://ozcf.co.za/wp-content/uploads/2024/07/logo-proper-blue-1.png" alt="" loading="lazy" decoding="async" /><span class="organization-item__name">Oranjezicht City Farm</span><span class="organization-item__detail">Environmental education</span></span></li>
+              <li class="organization-item"><span><img class="organization-item__logo organization-item__logo--world-literacy" src="https://worldliteracyfoundation.org/wp-content/uploads/2026/01/cropped-WLF-LOGO-300x300-CUTED.png" alt="" loading="lazy" decoding="async" /><span class="organization-item__name">World Literacy Foundation</span><span class="organization-item__detail">Education outreach</span></span></li>
+              <li class="organization-item"><span><img class="organization-item__logo organization-item__logo--hundred" src="https://www.biokind.org/assets/press/hundred.png" alt="" loading="lazy" decoding="async" /><span class="organization-item__name">HundrED</span><span class="organization-item__detail">Education innovation</span></span></li>
+              <li class="organization-item"><span><img class="organization-item__logo organization-item__logo--incognity" src="assets/organizations/incognity-academy-transparent.png" alt="" loading="lazy" decoding="async" /><span class="organization-item__name">Incognity Academy</span><span class="organization-item__detail">Education evaluation</span></span></li>
               <li class="organization-item"><span><span class="organization-item__logo organization-item__logo--dino-wordmark">DinoApply</span><span class="organization-item__name">DinoApply</span><span class="organization-item__detail">Independent product</span></span></li>
             </ol>
           </div>

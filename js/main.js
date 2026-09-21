@@ -466,7 +466,7 @@ const renderProjects = async () => {
   if (!featuredProjectsGrid || !additionalProjectsGrid) return;
 
   try {
-    const response = await fetch(new URL("../data/projects.json", import.meta.url), { cache: "no-store" });
+    const response = await fetch(new URL("../data/projects.json", import.meta.url));
     if (!response.ok) throw new Error(`Could not load projects: ${response.status}`);
 
     const data = await response.json();
@@ -601,6 +601,15 @@ const setupHeroVideo = () => {
   const playIcon = toggleBtn.querySelector(".hero-video__icon--play");
   const pauseIcon = toggleBtn.querySelector(".hero-video__icon--pause");
   const btnText = toggleBtn.querySelector(".hero-video__btn-text");
+  let userInteracted = false;
+
+  const loadVideo = () => {
+    const source = video.dataset.src;
+    if (!source) return;
+    video.src = source;
+    delete video.dataset.src;
+    video.load();
+  };
 
   const setPlayingState = (isPlaying) => {
     toggleBtn.setAttribute("data-state", isPlaying ? "playing" : "paused");
@@ -611,7 +620,9 @@ const setupHeroVideo = () => {
   };
 
   toggleBtn.addEventListener("click", () => {
+    userInteracted = true;
     if (video.paused) {
+      loadVideo();
       video.play().then(() => setPlayingState(true)).catch(() => {});
     } else {
       video.pause();
@@ -626,14 +637,35 @@ const setupHeroVideo = () => {
     video.pause();
     setPlayingState(false);
   } else {
-    const playPromise = video.play();
-    if (playPromise !== undefined) {
-      playPromise
-        .then(() => setPlayingState(true))
-        .catch(() => {
-          setPlayingState(false);
-        });
-    }
+    const startVideo = () => {
+      if (userInteracted || document.hidden || !video.paused) return;
+      loadVideo();
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => setPlayingState(true))
+          .catch(() => setPlayingState(false));
+      }
+    };
+
+    /* Let the poster paint and controls respond before decoding the background
+       video. A slow offscreen image should never delay its eventual start. */
+    const scheduleVideo = () => {
+      if ("requestIdleCallback" in window) {
+        window.requestIdleCallback(startVideo, { timeout: 1200 });
+      } else {
+        startVideo();
+      }
+    };
+
+    setPlayingState(false);
+    window.setTimeout(() => {
+      if (document.hidden) {
+        document.addEventListener("visibilitychange", scheduleVideo, { once: true });
+      } else {
+        scheduleVideo();
+      }
+    }, 1200);
   }
 };
 
@@ -706,6 +738,7 @@ const setupActiveNav = () => {
 /* Decorative only: the sparkle field adds atmosphere without adding content
    or changing the accessible reading order. */
 const setupSparkleFields = () => {
+  const animatedSections = [];
   const fields = [
     [".hero", [
       ["10%", "8%", "3.5rem", "#55aaff", "-1s", "7.2s"],
@@ -771,22 +804,50 @@ const setupSparkleFields = () => {
       field.appendChild(spark);
     });
     section.prepend(field);
+    animatedSections.push([section, field]);
   });
+
+  if (!animatedSections.length) return;
+
+  const setActive = (section, field, active) => {
+    field.classList.toggle("is-active", active);
+    if (section.classList.contains("organizations")) {
+      section.classList.toggle("is-animation-active", active);
+    }
+  };
+
+  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+    animatedSections.forEach(([section, field]) => setActive(section, field, true));
+    return;
+  }
+
+  const animationObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const field = entry.target.querySelector(":scope > .sparkle-field");
+        if (field) setActive(entry.target, field, entry.isIntersecting);
+      });
+    },
+    { threshold: 0.01, rootMargin: "18% 0px" }
+  );
+
+  animatedSections.forEach(([section]) => animationObserver.observe(section));
 };
 
-const init = async () => {
+const init = () => {
   if (currentYear) currentYear.textContent = String(new Date().getFullYear());
   setupHeroVideo();
   setupVideoModal();
   setupNavigation();
   setupMasthead();
   setupExperienceToggle();
-  await renderProjects();
   setupFeaturedProjectsToggle();
   setupHeadingMotion();
   setupReveal();
   setupSparkleFields();
   setupActiveNav();
+  /* The hero and navigation must be ready even if project data is slow. */
+  void renderProjects();
 };
 
 init();
