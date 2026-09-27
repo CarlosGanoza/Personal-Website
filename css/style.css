@@ -234,12 +234,20 @@ a {
 .reveal {
   opacity: 0;
   transform: translateY(18px);
-  transition: opacity 900ms var(--ease), transform 900ms var(--ease);
+  transition: opacity 620ms var(--ease), transform 620ms var(--ease);
 }
 
 .reveal.is-visible {
   opacity: 1;
   transform: none;
+}
+
+/* Animate content inside large sections, not the entire section-sized layer. */
+.section__inner.reveal,
+.certificates__gallery.reveal {
+  opacity: 1;
+  transform: none;
+  transition: none;
 }
 
 /* ---------- Masthead ------------------------------------------- */
@@ -4378,8 +4386,8 @@ body.nav-open .masthead .nav-toggle span {
    and collections arrive in a measured stagger. Nothing loops or competes
    with reading once it has arrived. */
 @keyframes motion-rise {
-  from { opacity: 0; transform: translateY(0.7rem); filter: blur(4px); }
-  to { opacity: 1; transform: none; filter: blur(0); }
+  from { opacity: 0; transform: translateY(0.7rem); }
+  to { opacity: 1; transform: none; }
 }
 
 @keyframes motion-title {
@@ -4399,14 +4407,14 @@ body.nav-open .masthead .nav-toggle span {
 }
 
 @keyframes motion-portrait {
-  from { opacity: 0; transform: translateX(1.25rem) scale(0.97); filter: blur(5px); }
-  to { opacity: 1; transform: none; filter: blur(0); }
+  from { opacity: 0; transform: translateX(1.25rem) scale(0.97); }
+  to { opacity: 1; transform: none; }
 }
 
 @keyframes motion-letter {
-  0% { opacity: 0; transform: translateY(0.82em) scale(0.94); filter: blur(5px); }
-  70% { opacity: 1; transform: translateY(-0.05em) scale(1.015); filter: blur(0); }
-  100% { opacity: 1; transform: none; filter: none; }
+  0% { opacity: 0; transform: translateY(0.82em) scale(0.94); }
+  70% { opacity: 1; transform: translateY(-0.05em) scale(1.015); }
+  100% { opacity: 1; transform: none; }
 }
 
 .motion-char {
@@ -4414,7 +4422,6 @@ body.nav-open .masthead .nav-toggle span {
   padding-bottom: 0.1em;
   margin-bottom: -0.1em;
   opacity: 0;
-  will-change: opacity, transform, filter;
 }
 
 .motion-word {
@@ -4424,12 +4431,12 @@ body.nav-open .masthead .nav-toggle span {
 
 .hero__text.is-visible .motion-char,
 .reveal.is-visible .motion-char {
-  animation: motion-letter 620ms var(--motion-delay) var(--ease) both;
+  animation: motion-letter 520ms var(--motion-delay) var(--ease) both;
 }
 
 /* Opening: a measured cascade instead of one large block fading in. */
 .hero__text > * { opacity: 0; }
-.hero__text.is-visible > * { animation: motion-rise 700ms var(--ease) both; }
+.hero__text.is-visible > * { animation: motion-rise 600ms var(--ease) both; }
 .hero__text.is-visible .hero__eyebrow { animation-delay: 60ms; }
 .hero__text.is-visible h1 { animation-name: motion-title; animation-delay: 140ms; }
 .hero__text.is-visible .hero__lede { animation-delay: 250ms; }
@@ -4441,7 +4448,7 @@ body.nav-open .masthead .nav-toggle span {
   transform: translateX(1.25rem) scale(0.97);
   transition: none;
 }
-.portrait.reveal.is-visible { animation: motion-portrait 900ms 240ms var(--ease) both; }
+.portrait.reveal.is-visible { animation: motion-portrait 700ms 160ms var(--ease) both; }
 
 /* Section titles reveal like a single editorial gesture; supporting copy
    follows shortly after, keeping the reading path clear. */
@@ -4476,7 +4483,7 @@ body.nav-open .masthead .nav-toggle span {
 .reveal.is-visible .experience-story__copy,
 .reveal.is-visible .certificates__copy,
 .reveal.is-visible .collaboration-callout__aside {
-  animation: motion-rise 680ms 230ms var(--ease) both;
+  animation: motion-rise 580ms 120ms var(--ease) both;
 }
 
 /* Project and research collections settle in one card at a time. */
@@ -4487,15 +4494,15 @@ body.nav-open .masthead .nav-toggle span {
 }
 
 .reveal.is-visible .showcase-card,
-.reveal.is-visible .research-card { animation: motion-pop 780ms var(--ease) both; }
+.reveal.is-visible .research-card { animation: motion-pop 650ms var(--ease) both; }
 .reveal.is-visible .showcase-card:nth-child(1),
-.reveal.is-visible .research-card:nth-child(1) { animation-delay: 120ms; }
+.reveal.is-visible .research-card:nth-child(1) { animation-delay: 50ms; }
 .reveal.is-visible .showcase-card:nth-child(2),
-.reveal.is-visible .research-card:nth-child(2) { animation-delay: 200ms; }
+.reveal.is-visible .research-card:nth-child(2) { animation-delay: 100ms; }
 .reveal.is-visible .showcase-card:nth-child(3),
-.reveal.is-visible .research-card:nth-child(3) { animation-delay: 280ms; }
-.reveal.is-visible .showcase-card:nth-child(4) { animation-delay: 360ms; }
-.reveal.is-visible .showcase-card:nth-child(5) { animation-delay: 440ms; }
+.reveal.is-visible .research-card:nth-child(3) { animation-delay: 150ms; }
+.reveal.is-visible .showcase-card:nth-child(4) { animation-delay: 200ms; }
+.reveal.is-visible .showcase-card:nth-child(5) { animation-delay: 250ms; }
 
 .reveal.is-visible .project-showcase.is-expanded .showcase-card--extra {
   animation: motion-disclose 560ms var(--ease) both;
@@ -4519,8 +4526,18 @@ body.nav-open .masthead .nav-toggle span {
   box-shadow: 0 20px 34px rgba(25, 45, 75, 0.16);
 }
 
-/* Let the organizations strip use the same calm section reveal as the rest of
-   the page. Its marquee waits until that entrance has settled before moving. */
+/* Reveal the strip's small pieces without fading its full-width container. */
+.reveal .organizations__head,
+.reveal .organizations__marquee { opacity: 0; }
+
+.reveal.is-visible .organizations__head,
+.reveal.is-visible .organizations__marquee {
+  animation: motion-rise 500ms var(--ease) both;
+}
+
+.reveal.is-visible .organizations__marquee { animation-delay: 80ms; }
+
+/* Its marquee waits until the entrance has settled before moving. */
 .reveal .organizations__track { animation-play-state: paused; }
 .reveal.is-visible .organizations__track {
   animation-play-state: running;
@@ -4976,8 +4993,8 @@ body.nav-open .masthead .nav-toggle span {
    block as the single source of truth prevents a blank or oversized logo from
    changing the perceived rhythm at the loop seam. */
 .organizations__list {
-  --organization-slot: 10.25rem;
-  --organization-gap: 0.25rem;
+  --organization-slot: 11.5rem;
+  --organization-gap: 0.75rem;
   display: flex !important;
   flex: 0 0 auto;
   flex-wrap: nowrap;
@@ -5087,8 +5104,8 @@ body.nav-open .masthead .nav-toggle span {
 }
 
 .organization-item__logo--world-literacy {
-  width: 4.5rem !important;
-  height: 4.5rem !important;
+  width: 4.15rem !important;
+  height: 4.15rem !important;
 }
 
 .organization-item > a .organization-item__logo--hundred,
@@ -5097,7 +5114,9 @@ body.nav-open .masthead .nav-toggle span {
   height: 4.75rem !important;
   max-width: 10.25rem;
   max-height: 4.75rem;
-  transform: scale(2.1) !important;
+  transform: scale(2.163) !important;
+  background: transparent !important;
+  mix-blend-mode: multiply !important;
 }
 
 .organization-item__logo--incognity {
@@ -5135,6 +5154,129 @@ body.nav-open .masthead .nav-toggle span {
   mix-blend-mode: normal;
 }
 
+/* Fine-tune the four primary marks: give the larger wordmarks a little more
+   presence, pull back the compact marks, and open the marquee rhythm up. */
+.organizations__list {
+  --organization-slot: 18rem;
+  --organization-gap: 2.25rem;
+}
+
+/* One immutable slot and one shared gap keep every mark—and the duplicated
+   marquee seam—at the exact same horizontal interval. */
+.organizations__list .organization-item {
+  flex: 0 0 var(--organization-slot) !important;
+  width: var(--organization-slot);
+  min-width: var(--organization-slot);
+  max-width: var(--organization-slot);
+  box-sizing: border-box;
+}
+
+.organization-item > a .organization-item__logo--dino-wordmark,
+.organization-item > span .organization-item__logo--dino-wordmark {
+  width: 10.75rem !important;
+  height: 4.45rem !important;
+  max-width: 10.75rem;
+  max-height: 4.45rem;
+  font-size: 2rem;
+}
+
+.organization-item--berkeley > a .organization-item__logo--berkeley,
+.organization-item--berkeley > span .organization-item__logo--berkeley {
+  width: 10.25rem !important;
+  height: 1.96rem !important;
+  max-width: 10.25rem;
+  max-height: 1.96rem;
+}
+
+.organization-item__logo--bart {
+  width: 2.45rem !important;
+  height: 1.5rem !important;
+  max-width: 2.45rem;
+  max-height: 1.5rem;
+}
+
+.organization-item--access > a,
+.organization-item--access > span {
+  gap: 0.477rem;
+}
+
+.organization-item--access .organization-item__logo {
+  width: 1.35rem !important;
+  height: 1.3rem !important;
+  max-width: 1.35rem;
+  max-height: 1.3rem;
+}
+
+.organization-item--access .organization-item__name {
+  font-size: 0.936rem;
+  display: none !important;
+}
+
+.organization-item__logo--perueduca {
+  width: 12.25rem !important;
+  height: 6.2rem !important;
+  max-width: 12.25rem;
+  max-height: 6.2rem;
+  transform: scale(1.55) !important;
+  transform-origin: center;
+}
+
+.organization-item__logo--incognity {
+  width: 5.6rem !important;
+  height: 6rem !important;
+  max-width: 5.6rem;
+  max-height: 6rem;
+}
+
+/* These selectors intentionally match the shared logo rule's specificity.
+   The compact BART and Project Access marks therefore cannot be reset to the
+   default logo size by that shared rule. */
+.organization-item > a .organization-item__logo--bart,
+.organization-item > span .organization-item__logo--bart {
+  width: 9rem !important;
+  height: 4.5rem !important;
+  max-width: 9rem;
+  max-height: 4.5rem;
+  transform: scale(0.912) !important;
+}
+
+.organization-item > a .organization-item__logo--perueduca,
+.organization-item > span .organization-item__logo--perueduca {
+  transform: scale(1.2) !important;
+  transform-origin: center;
+}
+
+.organization-item--berkeley > a .organization-item__logo--berkeley,
+.organization-item--berkeley > span .organization-item__logo--berkeley {
+  transform: scale(1.08) !important;
+  transform-origin: center;
+}
+
+.organization-item > a .organization-item__logo--incognity,
+.organization-item > span .organization-item__logo--incognity {
+  transform: scale(1.08) !important;
+  transform-origin: center;
+}
+
+.organization-item > a .organization-item__logo--world-literacy,
+.organization-item > span .organization-item__logo--world-literacy {
+  transform: scale(0.9) !important;
+  transform-origin: center;
+}
+
+.organization-item--access > a .organization-item__logo,
+.organization-item--access > span .organization-item__logo {
+  width: 9rem !important;
+  height: 4.5rem !important;
+  max-width: 9rem;
+  max-height: 4.5rem;
+  transform: translateY(-0.35rem) scale(0.84672) !important;
+}
+
+.organization-item--access .organization-item__name {
+  font-size: 0.936rem;
+}
+
 /* Animate only the section currently near the viewport. This preserves the
    neon treatment while avoiding dozens of off-screen filtered animations. */
 .sparkle-field {
@@ -5163,15 +5305,15 @@ body.nav-open .masthead .nav-toggle span {
 
 @media (max-width: 620px) {
   .organizations__list {
-    --organization-slot: 9.5rem;
-    --organization-gap: 0.25rem;
+    --organization-slot: 13.5rem;
+    --organization-gap: 1rem;
   }
 
   .organization-item > a .organization-item__logo--hundred,
   .organization-item > span .organization-item__logo--hundred {
     width: 9.5rem !important;
     max-width: 9.5rem;
-    transform: scale(1.95) !important;
+    transform: scale(2.0085) !important;
   }
 }
 

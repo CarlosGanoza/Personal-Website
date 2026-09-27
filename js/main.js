@@ -67,7 +67,7 @@ const splitHeadingForMotion = (heading) => {
       [...part].forEach((character) => {
         const letter = document.createElement("span");
         letter.className = "motion-char";
-        letter.style.setProperty("--motion-delay", `${100 + index * 24}ms`);
+        letter.style.setProperty("--motion-delay", `${60 + index * 10}ms`);
         letter.setAttribute("aria-hidden", "true");
         letter.textContent = character;
         word.appendChild(letter);
@@ -580,16 +580,27 @@ const setupNavigation = () => {
 const setupMasthead = () => {
   if (!masthead) return;
   const cinematicHero = document.getElementById("cinematic-hero");
+  let heroHeight = cinematicHero?.offsetHeight ?? 0;
+  let scheduled = false;
 
   const update = () => {
-    const heroHeight = cinematicHero ? cinematicHero.offsetHeight : 0;
     const isSolid = window.scrollY >= (heroHeight - 64);
     masthead.classList.toggle("is-solid", isSolid);
     masthead.classList.toggle("is-stuck", window.scrollY > 8);
+    scheduled = false;
   };
 
-  window.addEventListener("scroll", update, { passive: true });
-  window.addEventListener("resize", update);
+  const requestUpdate = () => {
+    if (scheduled) return;
+    scheduled = true;
+    window.requestAnimationFrame(update);
+  };
+
+  window.addEventListener("scroll", requestUpdate, { passive: true });
+  window.addEventListener("resize", () => {
+    heroHeight = cinematicHero?.offsetHeight ?? 0;
+    requestUpdate();
+  });
   update();
 };
 
@@ -694,7 +705,7 @@ const setupReveal = () => {
         observer.unobserve(entry.target);
       });
     },
-    { threshold: 0.04, rootMargin: "0px 0px -6%" }
+    { threshold: 0.01, rootMargin: "0px 0px 20% 0px" }
   );
   elements.forEach((element) => observer.observe(element));
 };

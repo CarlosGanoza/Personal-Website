@@ -1,2 +1,6 @@
 assets/video.mp4
-.env.local
+node_modules/
+.vercel/
+.env*
+!.env.example
+npm-debug.log*
